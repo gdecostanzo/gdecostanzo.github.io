@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Jekyll">
+    <link rel="license" href="LICENSE">
+
+    <meta name="application-name" content="Giovanni's Blog">
+    <meta name="theme-color" content="">
+    <link rel="archives" href="http://localhost:4000/archives/">
+
+    <meta name="robots" content="index,follow"> <!-- All Search Engines -->
+    <meta name="googlebot" content="index,follow"><!-- Google Specific    -->
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/code.css">
+    <script src="https://kit.fontawesome.com/e9dddf84a6.js" crossorigin="anonymous"></script><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>PiFace Digital 2 - Applicazioni avanzate in Python | Giovanni’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="PiFace Digital 2 - Applicazioni avanzate in Python" />
+<meta name="author" content="Giovanni De Costanzo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the personal website of Giovanni De Costanzo." />
+<meta property="og:description" content="This is the personal website of Giovanni De Costanzo." />
+<link rel="canonical" href="http://localhost:4000/PiFace-Advanced-Apps" />
+<meta property="og:url" content="http://localhost:4000/PiFace-Advanced-Apps" />
+<meta property="og:site_name" content="Giovanni’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-08-23T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PiFace Digital 2 - Applicazioni avanzate in Python" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Giovanni De Costanzo" />
+<script type="application/ld+json">
+{"dateModified":"2016-08-23T00:00:00+02:00","datePublished":"2016-08-23T00:00:00+02:00","url":"http://localhost:4000/PiFace-Advanced-Apps","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/PiFace-Advanced-Apps"},"author":{"@type":"Person","name":"Giovanni De Costanzo"},"description":"This is the personal website of Giovanni De Costanzo.","@type":"BlogPosting","headline":"PiFace Digital 2 - Applicazioni avanzate in Python","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Giovanni's Blog" /><link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+</head><body>
+
+    <div id="layout" class="pure-g"><aside class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="sidebar-info">
+        <a href="/">
+            <span hidden>Giovanni's Blog
+                Header Image</span>
+            <img class="brand-photo" src="http://localhost:4000/assets/profile_pic.jpg" alt="Photo of Giovanni De Costanzo"/>
+        </a>
+        <h1 class="brand-title">
+            <a href="/">Giovanni's Blog</a>
+        </h1>
+        <h2 class="brand-tagline">This is the personal website of Giovanni De Costanzo. </h2>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000/about">About Me</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside><div class="content pure-u-1 pure-u-md-3-4">
+            <div class="md-display">
+                <h1>
+                    <a class="jekyll-header" href="/">Welcome to Giovanni's Blog</a>
+                </h1><div class="menu">
+    <div class="about">
+        <a href="/about">
+            <i class="fas fa-signature"></i>
+            About
+        </a>
+    </div>
+    <div class="hashtags">
+        <a href="/tags">
+            <i class="fas fa-hashtag"></i>
+            Tags
+        </a>
+    </div>
+    <div class="categories">
+        <a href="/categories">
+            <i class="far fa-folder-open"></i>
+            Categories
+        </a>
+    </div>
+    <div class="archive">
+        <a href="/archive">
+            <i class="fas fa-archive"></i>
+            Archive
+        </a>
+    </div>
+</div><div id="search">
+    <label>
+        <span class="search-icon">🔎</span>
+        <input autocomplete="off" id="search-input" oninput="changeResultContainerDisp(this.value)" placeholder="Search all articles..." type="text"/>
+    </label>
+
+    <ul id="results-container" style="display: none"></ul>
+</div>
+<script src="/assets/simple-jekyll-search.js"></script>
+<script>
+    function changeResultContainerDisp(val) {
+        if (val) {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "block";
+            document.getElementById("search-input").addEventListener("blur", function () {
+                document.addEventListener("click", function (event) {
+                    var isClickInside = document.getElementById("results-container").contains(event.target);
+                    if (! isClickInside) {
+                        document
+                            .getElementById("results-container")
+                            .style
+                            .display = "none";
+                    }
+                })
+            })
+        } else {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "none";
+        }
+    }
+    var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById("search-input"),
+        resultsContainer: document.getElementById("results-container"),
+        json: "/search.json",
+        searchResultTemplate: "<li class='search_res' style='list-style: none;'><a href='http://localhost:4000{url}' color: #555555;'><p><strong>></strong> {title}</p></a></li>",
+        noResultsText: "No results found. Try another search.",
+        fuzzy: false,
+        limit: 5
+    })
+</script></div>
+            <div>
+                <article class="post-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">PiFace Digital 2 - Applicazioni avanzate in Python</h2><p><time datetime="2016-08-23T00:00:00+02:00" itemprop="datePublished">
+        Aug 23, 2016
+    </time>&#8239;
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">By: Giovanni De Costanzo</span></span>&#8239;|&#8239;<a href="/tags/#InternetofThings">#InternetofThings</a> &#8239;<a href="/tags/#IoT">#IoT</a> &#8239;<a href="/tags/#piface">#piface</a> &#8239;<a href="/tags/#piface digital 2">#piface digital 2</a> &#8239;<a href="/tags/#pifaceio">#pifaceio</a> &#8239;<a href="/tags/#Programmazione">#Programmazione</a> &#8239;<a href="/tags/#Python">#Python</a> &#8239;<a href="/tags/#raspberry">#raspberry</a> &#8239;<a href="/tags/#raspberrypi">#raspberrypi</a> &#8239;</p></header>
+
+    <div articlebody" class="post-body itemprop=">
+        <figure>
+
+<img data-width="1291" data-height="479" src="assets/posts/pifacedigital2.jpg" />  
+</figure>
+
+<p>In questo articolo vedremo come realizzare delle applicazioni più avanzate per il nostro PiFace Digital. In particolare vi mostrerò come creare un’applicazione multithread, ovvero come definire dei sottoprogrammi all’interno della nostra applicazione, che andranno a fare polling (si metteranno in ascolto) su diverse porte di input, eseguendo task differenti. Vedremo inoltre come condividere una variabile tra i thread in esecuzione e come gestire la pressione prolungata di un tasto.</p>
+
+<p>Il programma di esempio che andremo a vedere, crea quattro thread che saranno lanciati parallelamente in esecuzione. I primi tre svolgono essenzialmente le stesse operazioni, ovvero aggiornano e poi stampano a video il valore della variabile condivisa che è stata creata. Il quarto thread invece, alla pressione prolungata per almeno 2 secondi, accende in sequenza tutti i led presenti sulla scheda PiFace. Di seguito è mostrato il codice che poi andremo a commentare. Suppongo che il lettore abbia già conoscenza del linguaggio Python, dunque eviterò di dare spiegazioni dettagliate per ciò che riguarda la sintassi e la logica del linguaggio.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">from</span> <span class="nn">timeit</span> <span class="kn">import</span> <span class="n">default_timer</span>
+<span class="kn">import</span> <span class="nn">pifaceio</span>
+<span class="kn">import</span> <span class="nn">threading</span>
+
+<span class="n">pfio</span> <span class="o">=</span> <span class="n">pifaceio</span><span class="p">.</span><span class="n">PiFace</span><span class="p">()</span>
+
+<span class="c1">#------ Shared variable -------
+</span><span class="k">class</span> <span class="nc">Variable</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+   <span class="n">value</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="n">myVar</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">myVarSet</span><span class="p">(</span><span class="n">stato</span><span class="p">):</span>
+   <span class="n">myVar</span><span class="p">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">stato</span>
+
+<span class="k">def</span> <span class="nf">myVarValue</span><span class="p">():</span>
+   <span class="k">return</span> <span class="n">myVar</span><span class="p">.</span><span class="n">value</span>
+
+
+<span class="c1">#----- Pin read and write methods -----
+</span><span class="k">def</span> <span class="nf">read_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+   <span class="n">pfio</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+   <span class="k">return</span> <span class="n">pfio</span><span class="p">.</span><span class="n">read_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">write_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+   <span class="n">pfio</span><span class="p">.</span><span class="n">write_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+   <span class="n">pfio</span><span class="p">.</span><span class="n">write</span><span class="p">()</span>
+
+
+<span class="c1">#------ Threads defining-------
+</span><span class="k">class</span> <span class="nc">myThread</span> <span class="p">(</span><span class="n">threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">):</span>
+   <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+      <span class="n">threading</span><span class="p">.</span><span class="n">Thread</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+      <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+ 
+   <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">if</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">'f1'</span><span class="p">:</span>
+         <span class="n">f1</span><span class="p">()</span>
+      <span class="k">elif</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">'f2'</span><span class="p">:</span>
+         <span class="n">f2</span><span class="p">()</span>
+      <span class="k">elif</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">'f3'</span><span class="p">:</span>
+         <span class="n">f3</span><span class="p">()</span>
+      <span class="k">elif</span> <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">==</span> <span class="s">'ledShow'</span><span class="p">:</span>
+         <span class="n">ledShow</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">f1</span><span class="p">():</span>
+   <span class="k">while</span> <span class="bp">True</span><span class="p">:</span> 
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+         <span class="k">print</span> <span class="s">'Previous state: '</span><span class="p">,</span> <span class="n">myVarValue</span><span class="p">()</span>
+         <span class="n">myVarSet</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+         <span class="k">print</span> <span class="s">'Current state: '</span><span class="p">,</span> <span class="n">myVarValue</span><span class="p">()</span>
+         <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+         <span class="k">print</span> <span class="s">'Thread 1 terminated'</span>
+         <span class="k">break</span>
+
+<span class="k">def</span> <span class="nf">f2</span><span class="p">():</span>
+   <span class="k">while</span> <span class="bp">True</span><span class="p">:</span> 
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
+         <span class="k">print</span> <span class="s">'Previous state: '</span><span class="p">,</span> <span class="n">myVarValue</span><span class="p">()</span>
+         <span class="n">myVarSet</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+         <span class="k">print</span> <span class="s">'Current state: '</span><span class="p">,</span> <span class="n">myVarValue</span><span class="p">()</span>
+         <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+         <span class="k">print</span> <span class="s">'Thread 2 terminated'</span>
+         <span class="k">break</span>
+
+<span class="k">def</span> <span class="nf">f3</span><span class="p">():</span>
+   <span class="k">while</span> <span class="bp">True</span><span class="p">:</span> 
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+         <span class="k">print</span> <span class="s">'Previous state: '</span><span class="p">,</span> <span class="n">myVarValue</span><span class="p">()</span>
+         <span class="n">myVarSet</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+         <span class="k">print</span> <span class="s">'Current state: '</span><span class="p">,</span> <span class="n">myVarValue</span><span class="p">()</span>
+         <span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+         <span class="k">print</span> <span class="s">'Thread 3 terminated'</span>
+         <span class="k">break</span> 
+
+
+<span class="k">def</span> <span class="nf">ledShow</span><span class="p">():</span>
+   <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+         <span class="n">start</span> <span class="o">=</span> <span class="n">default_timer</span><span class="p">()</span>
+         <span class="n">now</span> <span class="o">=</span> <span class="n">default_timer</span><span class="p">()</span>
+         <span class="n">endsBefore</span> <span class="o">=</span> <span class="bp">False</span>
+         <span class="k">while</span> <span class="p">((</span><span class="n">now</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+               <span class="n">endsBefore</span> <span class="o">=</span> <span class="bp">True</span>
+               <span class="k">break</span>
+            <span class="n">now</span> <span class="o">=</span> <span class="n">default_timer</span><span class="p">()</span> 
+
+         <span class="k">if</span> <span class="ow">not</span> <span class="n">endsBefore</span><span class="p">:</span>
+            <span class="n">leds</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">led</span> <span class="ow">in</span> <span class="n">leds</span><span class="p">:</span>
+               <span class="n">write_pin</span><span class="p">(</span><span class="n">led</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+               <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+               <span class="n">write_pin</span><span class="p">(</span><span class="n">led</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+      <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="ow">and</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+         <span class="k">print</span> <span class="s">'Thread 4 terminated'</span>
+         <span class="k">break</span> 
+
+
+<span class="c1">#---- Shared variable initialiting
+</span><span class="n">myVarSet</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+
+<span class="c1">#---- Starting threads -----
+</span><span class="n">func1</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="s">'f1'</span><span class="p">)</span>
+<span class="n">func2</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="s">'f2'</span><span class="p">)</span>
+<span class="n">func3</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="s">'f3'</span><span class="p">)</span>
+<span class="n">func4</span> <span class="o">=</span> <span class="n">myThread</span><span class="p">(</span><span class="s">'ledShow'</span><span class="p">)</span>
+
+<span class="n">func1</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">func2</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">func3</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+<span class="n">func4</span><span class="p">.</span><span class="n">start</span><span class="p">()</span>
+
+<span class="k">print</span> <span class="s">'Hold down the buttons 0 and 2 to terminate the program'</span>
+
+<span class="n">func1</span><span class="p">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">func2</span><span class="p">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">func3</span><span class="p">.</span><span class="n">join</span><span class="p">()</span>
+<span class="n">func4</span><span class="p">.</span><span class="n">join</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Come si può vedere dal codice, è stata definita una classe myThread per la creazione dei threads. Quando un nuovo oggetto della classe myThread viene istanziato e lanciato, viene eseguita una specifica funzione in base al parametro name passato al costruttore. Questo approccio ha consentito di definire una singola classe dinamica per la creazione dei thread. Per poter condividere una variabile tra i vari thread in esecuzione, è necessario creare un oggetto e inizializzare il valore della variabile in esso contenuta solo dopo la definizione delle varie ‘funzioni thread’. Il quarto thread, che corrisponde alla funzione ledShow, effettua polling sull’input 3 e una volta che viene trovato attivo, controlla che per i prossimi 2 secondi resti in quello stato; in caso positivo entra nel blocco if successivo e accende tutti i led in sequenza.</p>
+
+<p>Sulla base del programma appena visto potrete creare applicazioni avanzate e personalizzate per il vostro PiFace Digital, dando spazio alla creatività. I thread visti in questo esempio eseguono azioni molto banali, ma potrebbero eseguire operazioni molto più interessanti come l’invio di un’email, lo scatto di una foto da una webcam, accendere il sistema di riscaldamento di casa, ecc. Dunque non dovete fare altro che dare spazio all’immaginazione e creare il vostro sistema IoT!</p>
+
+<p>Sulla pagina ufficiale di PiFace potete trovare moltissime idee e guide su come realizzarle (in lingua inglese).</p>
+
+    </div><div id="author">
+    <h3>About
+        Giovanni De Costanzo</h3>
+    <img src="assets/author-pic.png" alt="Photo of Giovanni De Costanzo"/>
+    <p>My name is Giovanni De Costanzo and I'm a Sr.Research Engineer at Malwarebytes. I'm a geek, passionate about all the tech world since early age.</p>
+</div><a class="u-url" href="/PiFace-Advanced-Apps" hidden></a>
+</article><hr/>
+
+<footer class="footer">
+    <div class="pure-menu pure-menu-horizontal">
+        <ul>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="/">
+                    <i class="fas fa-home"></i>
+                    <span class="md-display">Home</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.linkedin.com/in/giovanni-de-costanzo-54b6b083/">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="md-display">Linkedin</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://github.com/gdecostanzo">
+                    <i class="fab fa-github"></i>
+                    <span class="md-display">GitHub</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="mailto:mail@giovannidecostanzo.it">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="md-display">E-mail</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.facebook.com/giovanni.decostanzo">
+                    <i class="fab fa-facebook"></i>
+                    <span class="md-display">Facebook</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.instagram.com/g.decostanzo/">
+                    <i class="fab fa-instagram"></i>
+                    <span class="md-display">Instagram</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

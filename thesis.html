@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Jekyll">
+    <link rel="license" href="LICENSE">
+
+    <meta name="application-name" content="Giovanni's Blog">
+    <meta name="theme-color" content="">
+    <link rel="archives" href="http://localhost:4000/archives/">
+
+    <meta name="robots" content="index,follow"> <!-- All Search Engines -->
+    <meta name="googlebot" content="index,follow"><!-- Google Specific    -->
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/code.css">
+    <script src="https://kit.fontawesome.com/e9dddf84a6.js" crossorigin="anonymous"></script><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>A P2P Reputation-based System for Blocking Malware at Kernel-Level | Giovanni’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="A P2P Reputation-based System for Blocking Malware at Kernel-Level" />
+<meta name="author" content="Giovanni De Costanzo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the personal website of Giovanni De Costanzo." />
+<meta property="og:description" content="This is the personal website of Giovanni De Costanzo." />
+<link rel="canonical" href="http://localhost:4000/thesis" />
+<meta property="og:url" content="http://localhost:4000/thesis" />
+<meta property="og:site_name" content="Giovanni’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-09-17T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="A P2P Reputation-based System for Blocking Malware at Kernel-Level" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Giovanni De Costanzo" />
+<script type="application/ld+json">
+{"dateModified":"2019-09-17T00:00:00+02:00","datePublished":"2019-09-17T00:00:00+02:00","url":"http://localhost:4000/thesis","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/thesis"},"author":{"@type":"Person","name":"Giovanni De Costanzo"},"description":"This is the personal website of Giovanni De Costanzo.","@type":"BlogPosting","headline":"A P2P Reputation-based System for Blocking Malware at Kernel-Level","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Giovanni's Blog" /><link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+</head><body>
+
+    <div id="layout" class="pure-g"><aside class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="sidebar-info">
+        <a href="/">
+            <span hidden>Giovanni's Blog
+                Header Image</span>
+            <img class="brand-photo" src="http://localhost:4000/assets/profile_pic.jpg" alt="Photo of Giovanni De Costanzo"/>
+        </a>
+        <h1 class="brand-title">
+            <a href="/">Giovanni's Blog</a>
+        </h1>
+        <h2 class="brand-tagline">This is the personal website of Giovanni De Costanzo. </h2>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000/about">About Me</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside><div class="content pure-u-1 pure-u-md-3-4">
+            <div class="md-display">
+                <h1>
+                    <a class="jekyll-header" href="/">Welcome to Giovanni's Blog</a>
+                </h1><div class="menu">
+    <div class="about">
+        <a href="/about">
+            <i class="fas fa-signature"></i>
+            About
+        </a>
+    </div>
+    <div class="hashtags">
+        <a href="/tags">
+            <i class="fas fa-hashtag"></i>
+            Tags
+        </a>
+    </div>
+    <div class="categories">
+        <a href="/categories">
+            <i class="far fa-folder-open"></i>
+            Categories
+        </a>
+    </div>
+    <div class="archive">
+        <a href="/archive">
+            <i class="fas fa-archive"></i>
+            Archive
+        </a>
+    </div>
+</div><div id="search">
+    <label>
+        <span class="search-icon">🔎</span>
+        <input autocomplete="off" id="search-input" oninput="changeResultContainerDisp(this.value)" placeholder="Search all articles..." type="text"/>
+    </label>
+
+    <ul id="results-container" style="display: none"></ul>
+</div>
+<script src="/assets/simple-jekyll-search.js"></script>
+<script>
+    function changeResultContainerDisp(val) {
+        if (val) {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "block";
+            document.getElementById("search-input").addEventListener("blur", function () {
+                document.addEventListener("click", function (event) {
+                    var isClickInside = document.getElementById("results-container").contains(event.target);
+                    if (! isClickInside) {
+                        document
+                            .getElementById("results-container")
+                            .style
+                            .display = "none";
+                    }
+                })
+            })
+        } else {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "none";
+        }
+    }
+    var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById("search-input"),
+        resultsContainer: document.getElementById("results-container"),
+        json: "/search.json",
+        searchResultTemplate: "<li class='search_res' style='list-style: none;'><a href='http://localhost:4000{url}' color: #555555;'><p><strong>></strong> {title}</p></a></li>",
+        noResultsText: "No results found. Try another search.",
+        fuzzy: false,
+        limit: 5
+    })
+</script></div>
+            <div>
+                <article class="post-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">A P2P Reputation-based System for Blocking Malware at Kernel-Level</h2><p><time datetime="2019-09-17T00:00:00+02:00" itemprop="datePublished">
+        Sep 17, 2019
+    </time>&#8239;
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">By: Giovanni De Costanzo</span></span>&#8239;|&#8239;<a href="/tags/#InternetofThings">#InternetofThings</a> &#8239;<a href="/tags/#IoT">#IoT</a> &#8239;<a href="/tags/#piface">#piface</a> &#8239;<a href="/tags/#piface digital 2">#piface digital 2</a> &#8239;<a href="/tags/#pifaceio">#pifaceio</a> &#8239;<a href="/tags/#Programmazione">#Programmazione</a> &#8239;<a href="/tags/#Python">#Python</a> &#8239;<a href="/tags/#raspberry">#raspberry</a> &#8239;<a href="/tags/#raspberrypi">#raspberrypi</a> &#8239;</p></header>
+
+    <div articlebody" class="post-body itemprop=">
+        <div class="entry-content" itemprop="articleBody">
+				
+<span id="more-1470"></span>
+
+<img data-width="1291" data-height="479" src="assets/posts/thesis/cover.jpeg" />  
+
+<p>In this article on my personal blog, I’ll present my thesis work, done 2 years ago at University of Salerno with Prof. Francesco Palmieri as my supervisor. The idea behind this work came from me, and was immediately supported by my supervisor. </p>
+
+
+
+<h2>Introduction</h2>
+
+
+
+<p>Technological diffusion, in particular of computer systems, is rapidly growing in recent years. According to an annual report published by Cisco, in 2021 each person will have, on average, more than three devices connected to the Internet. However, this growth is not associated with an adequate user awareness of computer security issues. In fact, as the number of devices on the network grew, the amount of sensitive data, online banking services and messaging systems also increased, attracting the attention of computer crime. In this scenario, the risk of fraud, digital theft and privacy violation is always around the corner and constantly keeps the experts busy, who try to find new countermeasures every time. Nowadays, one of the main issues in computer security is undoubtedly represented by <em>malware</em>, a term which identifies any software created with the intention of causing several different types of damage within the system in which it is executed. The first malware has already spread since the 1980s. Over the years, malware have become more complex, so they can be classified into different categories, such as, worms, trojans, spyware, adware, rootkit, ransomware, etc. In particular, ransomware are having a great impact in the media. Consider for example the <em>WannaCry </em>ransomware, which brought several organizations to their knees in various countries, demanding the payment of a ransom in Bitcoin. Another malware that has been much discussed in recent years is <em>Stuxnet</em>, developed in 2009, considered one of the first cyber-weapons. It has been created to hinder the Iranian nuclear program. However, the spread of this malware was not controlled, and it began to infect also devices outside the nuclear plants. This case brings to our attention the fact that a malware is no longer a danger only for simple personal computers but could potentially trigger a cyber war. </p>
+
+
+
+<h4>Contribution</h4>
+
+
+
+<p>The existing security mechanisms and tools are not always effective in identifying or stopping the malware actions in a timely manner. In this work we design and implement a system that is able to block any malicious software, based on its reputation, before it can cause damage to the system. In the case of ransomware, in fact, it becomes of crucial importance to prevent the massive execution of the malicious payload, since most likely it would cause the loss of data on many victim devices. The main idea underlying our proposal is to create a robust and reliable collaborative system, based on a simple user reputation mechanism, which enables to collect reports concerning the <em>genuineness </em>of a given software, with the aim of determining whether to allow its execution or not. </p>
+
+
+
+<p>In detail, this work introduces a whitelist-based approach that, like other existing solutions, defines what is safe to execute, blocking everything else. It involves the use of a kernel module, operating at the runtime system level, that intercepts the system calls necessary for the execution of a file, verifying its reliability through a simple and lightweight but extremely robust reputation system available through a fully distributed interface. In detail, each executable file is identified within the system by a value calculated through a cryptographic hash function. Such a value will be used as a key within a <em>Kademlia Distributed Hash Table (DHT) </em>that makes reliability scores available to individual runtime systems in a fully distributed and replicated way. Moreover, each executable is associated with a score, updated according to the reports made by registered voluntary users, that is used to classify such executable as <em>reliable </em>or <em>malicious</em>. Again, each contributing user has a reputation that varies based on the number of correct reports he made, and which determines the weight given to reports made by such user. We remark that in the proposed solution only a central entity can write on the Kademlia DHT nodes, collect the users’ reports and send the signed updated scores. Each runtime system can check the genuinity of such scores by verifying them through against a traditional Public Key Infrastructure (PKI). Experimental results show that the latency introduced by the proposed system is acceptable. </p>
+
+
+
+<h2>Reputation systems and their problems</h2>
+
+
+
+<p>The concept of <em>reputation </em>concerns the credibility an individual has within a social community. Having a good reputation allows a person or a software to appear credible and reliable in the eyes of society. On the Internet, one of the main causes of bad reputation is the publication of false or inaccurate content, i.e., reports, reviews, etc. This is a serious problem, since almost anyone has the possibility to access the Web and publish, without any particular technical knowledge, false or untrusted material or false information. In recent years various attempts have been made to create systems capable of obtaining an automated estimate of the reputation of an entity in the Internet. Some common uses of these systems can be found on e-commerce websites, such as <em>eBay </em>or <em>Amazon</em>, or in online consulting communities, e.g., <em>Stack Exchange</em>. Therefore, a reputation system allows users to evaluate each other within an online community, in order to build <em>trust through reputation</em>. The fundamental idea is to allow the parties to evaluate each other, for example after the conclusion of a transaction, and to use the aggregated votes to obtain a <em>trust </em>or <em>reputation score</em>, which can help the other parties to decide whether or not to carry out transactions with that party in the future. A natural consequence of these systems is that they provide an incentive for good behavior, and therefore tend to have a positive effect on market quality. </p>
+
+
+
+<p>Further areas in which reputation mechanisms find scope of
+application are the following:
+</p>
+
+
+
+<ul><li> Web search engines (e.g., <em>PageRank</em>); </li><li> Developer community (e.g., <em>StackOverflow</em>); </li><li> Internet security (e.g., <em>TrustedSource</em>); </li><li> E-mail (e.g., <em>Vipul’s Razor</em>, used for spam filtering); </li><li> Academia (e.g., <em>h-index </em>of a researcher).</li></ul>
+
+
+
+<p>In order for a reputation system to work effectively, the following three properties must be strongly taken into account. In detail, each entity should:</p>
+
+
+
+<ul><li>Have a long life and create reliable expectations about future interactions; </li><li>Capture and distribute feedback on previous interactions; </li><li>Use feedback to drive trust. </li></ul>
+
+
+
+<p>These three properties are of paramount importance to build reliable reputations, and everything revolves around a fundamental element, which is <em>user’s feedback</em>. We remark that although several attempts have been made to build reputation systems that are not based on feedback, in the state of the art the feedbacks still represent the basis of a reputation system. However, feedbacks may bring up three main problems: </p>
+
+
+
+<ul><li>Reluctance of users to provide feedback when this is not mandatory. If there is a large flow of interactions in an online community, but no feedback is collected, the trust and reputation environment cannot be formed; </li><li>To get negative feedback from users, who are conditioned by several factors, such as fear of retaliation. In fact, when feedback is not anonymous, many users are afraid of receiving a negative feedback in turn; </li><li>To elicit honest feedback from users. Although there is no concrete way to establish the truthfulness of honest feedback in a community, new users will be more likely to leave honest feedbacks. </li></ul>
+
+
+
+<p>Other pitfalls in reputation systems can include <em>identity change </em>and <em>discrimination</em>. Also in this case it is necessary to adjust user actions to obtain accurate and consistent feedbacks. </p>
+
+
+
+<h4>Attacks on Reputation Systems</h4>
+
+
+
+<p>Reputation systems are generally vulnerable to certain types of attacks, which can be classified based on the attacker’s goals. However, depending on the context and the type of attack, it is possible to apply proper defense mechanisms. The main attacks that can be directed towards a reputation system are the following: </p>
+
+
+
+<ul><li>Self-promoting Attack: the attacker increases his reputation in a distorted way. An example is the <em>Sybil Attack</em>, where the attacker subverts the reputation system by creating a large number of pseudonyms and subsequently using them to gain a disproportionate influence. </li><li>Whitewashing Attack: some system vulnerabilities are exploited to update the reputation of a user. Other types of attacks can be combined with the whitewashing attack to make it more effective. </li><li>Slandering Attack: the attacker reports false data to lower the reputation of certain users. </li><li>Denial of Service Attack: this attack, by using Denial of Service (DoS) attacks, prevents the spread of reputation values in the systems. </li><li>Man in the Middle: an attacker could intercept the traffic and tamper with the feedback sent by other users. </li></ul>
+
+
+
+<h2>A Reputation-Based System for Malware Detection: A Technical Framework</h2>
+
+
+
+<p>Current malware analysis techniques cannot deal with the action of new malicious software (i.e., <em>0-day</em>), which has not yet been analyzed and detected. Therefore, it is clear that there is the need for preventive defense measures, to avoid the initiation of any harmful action within a system, as it could be the encryption of data by a ransomware. The main problem affecting most of the existing protection mechanisms is that they rely on a <em>negative-based model </em>(<em>blacklist</em>), that is, such mechanisms define what is dangerous, while implicitly letting everything else pass. Conversely, the main idea behind our proposal is to block, at the operating system level, the execution of any unknown software. The proposed system uses a <em>positive-based model </em>(<em>whitelist</em>), which defines what is allowed to pass, blocking everything else. Furthermore, we formulate a model for software classification, based on the “genuine” or “malicious” behaviors of the software. The proposed model allows the operating system to determine if it can execute a certain software. However, we remark that given the enormous amount of existing software, it is almost impossible to perform the classification by a single individual or a single entity. For this reason, the classification model we propose is based on <em>user collaboration</em>. In this way, over time, entire communities of users can contribute to the software classification process, and this can be an invaluable support for the various companies that are involved in malware analysis.</p>
+
+
+
+<h4>The Model</h4>
+
+
+
+<p>In the proposed model, for each executable file, a hash value is calculated, by which this file will be uniquely identified within the system. Each unclassified executable file has an initial <em>reliability score </em>value which is equal to 0. When the reliability score reaches a value greater than 1, then such executable is classified as <em>reliable</em>; on the other hand, if the <em>reliability score </em>value becomes less than −1, the evaluated executable is considered as <em>malicious</em>. Thus, we have a “guard range” [−1, 1] in which we have no sufficient information to effectively trust its execution and need to ask the interested users for its permission to execute. The score of each executable file is determined by users registered to the system, who contribute by sending reports concerning the reliability of such file. Of course, such users may be human entities or automatic malware checkers operating on a specific host. </p>
+
+
+
+<p><em><strong>1) Weaknesses and Improvements to the Basic Model: </strong></em>It is necessary to make some considerations on the aforementioned basic model that could be vulnerable to several kind of attacks. For each of these attacks, we show how it can be mitigated or sometimes completely avoided. </p>
+
+
+
+<ul><li>Bad Mouthing Attack: A dishonest user could make incorrect reports to increase the score of a <em>malicious </em>executable file or damage the score of a <em>reliable </em>executable. To mitigate this issue, we introduce a <em>reputation model </em>for registered users. In such a model, the reports are weighed based on the reputation of each user, which can increase or decrease depending on the number of correct or incorrect reports such user has given. However, we remark that a malicious user could decide to carry out a certain number of correct reports, in order to increase his reputation, before making a dishonest report. To discourage this behavior, users who make incorrect reports are penalized by the model, by decreasing their reputation in a proportional manner. This means that the higher the user’s reputation, the greater the decrease in the case of making an incorrect report. <br /></li><li>Sybil Attack: Malicious users could subvert the system by registering to such system a disproportionate number of pseudonyms. It is important to point out that many users with a low reputation could still alter the score of an executable file. To overcome this problem, the user registration process makes use of digital certificates, issued by a <em>Certification Authority (CA) </em>for the verification of user identity. This means that the system registration process is controlled, and no user will be able to register several times using different pseudonyms. <br /></li><li>Man in the Middle Attack: An attacker could decide to intercept and tamper the reports of other users, for the purpose of altering the score of an executable file or damaging the reputation of an honest user. To prevent this type of attack, all the communication between the server that collects the reports and the users belonging to the system takes place by using encrypted connections. In addition, any store and lookup access to the P2P frontend repository is protected by digital signatures, ensuring integrity of all communications with Kademlia nodes. <br /></li><li>Denial of Service Attack: Centralized systems are typically vulnerable to Denial of Service (DoS) attacks; distributed systems, on the other hand, are usually less vulnerable if sufficient redundancy is used, so that incorrect behavior, or the loss of some participants, will not affect the functioning of the entire system. Therefore, the proposed solution is based on a decentralized front-end architecture based on Kademlia P2P overlay that interfaces the kernel module performing runtime checks. Such interface is the most critical element potentially exposed to DoS, so that the use of a Kandemlia infrastructure for storing reliability information, can effectively mitigate the effects of these attacks. Indeed, the algorithm used by Kademlia nodes to record each other’s existence is able to resist to the most common DoS attacks. </li></ul>
+
+
+
+<p>In light of these observations, we improve and extend the basic model described above, by providing it with a user reputation mechanism which works as follows. Each new user joining the system has an initial <em>reputation value </em>equal to 0.5 and such a value can fluctuate from a minimum of 0 to a maximum of 1. Again, a user whose reputation falls below 0.01 will no longer be able to make reports. The reputation of each user is used to weigh the reports he made, that is, the more correct reports a user makes, the more his reputation grows; on the other hand, as the number of erroneous reports increases, the reputation of the user decreases. To determine whether the report concerning an executable file is correct or not, the overall score associated with such executable must reach a value that can be classified as <em>reliable </em>or <em>malicious</em>. For example, if the score related to an executable file becomes <em>reliable</em>, all the users who have made a positive report for such file will see their reputation grow. On the contrary, users who have made a negative report, will see their reputation decrease. Moreover, once an executable file has been classified as <em>reliable </em>or <em>malicious</em>, subsequent reports made by other users will increase (or decrease) the score further but will not change the reputation of such users. We have made this choice since a malicious user could send positive reports for already classified executable files, in order to easily increase their reputation. We remark that the score related to an executable file is not updated immediately, upon the receipt of a single report made by a user, but at the end of a fixed time window. More precisely, the proposed system collects the reports received within a fixed time window and, when such a window expires, it calculates a weighted average which will be added to the executable file score. <br /></p>
+
+
+
+<p><em><strong>2) Formalization of the Improved Model: </strong></em></p>
+
+
+
+<p>The model described above, operating according to a <em>time-slotted logic </em>with fixed time slots of length <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" />, can be formalized as follows. Let <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" /> be an executable file and <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_{e}(t) " class="latex" /> the score associated with such file at the time <img src="https://s0.wp.com/latex.php?latex=+t+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" t " class="latex" />. Each new file <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" />, appearing at the time <img src="https://s0.wp.com/latex.php?latex=+t+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" t " class="latex" /> has an initial score value equal to <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+%3D+0+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_{e}(t) = 0 " class="latex" /> and it will be classified as <em>reliable </em>or <em>malicious</em>, based on the values <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+%3E+1+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_{e}(t) &gt; 1 " class="latex" /> and <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+%3C+-1+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_{e}(t) &lt; -1 " class="latex" />, respectively. Again, let <img src="https://s0.wp.com/latex.php?latex=+u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" u " class="latex" /> be a user joining the system and <img src="https://s0.wp.com/latex.php?latex=+r_%7Bu%7D%28t%29+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" r_{u}(t) " class="latex" /> the reputation value of such user at time <img src="https://s0.wp.com/latex.php?latex=+t+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" t " class="latex" />. Assuming the instant <img src="https://s0.wp.com/latex.php?latex=+t+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" t " class="latex" /> as the moment when a user joins the system, we set <img src="https://s0.wp.com/latex.php?latex=+r_%7Bu%7D%28t%29+%3D+0.5+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" r_{u}(t) = 0.5 " class="latex" /> for each new user <img src="https://s0.wp.com/latex.php?latex=+u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" u " class="latex" />. The reputation <img src="https://s0.wp.com/latex.php?latex=+r_%7Bu%7D%28t%29+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" r_{u}(t) " class="latex" /> of a generic user <img src="https://s0.wp.com/latex.php?latex=+u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" u " class="latex" /> may fluctuate within the interval <img src="https://s0.wp.com/latex.php?latex=+%5B0%2C1%5D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" [0,1] " class="latex" />, where <img src="https://s0.wp.com/latex.php?latex=+0+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" 0 " class="latex" /> indicates that the user is totally unreliable and <img src="https://s0.wp.com/latex.php?latex=+1+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" 1 " class="latex" /> the opposite. </p>
+
+
+
+<p>Let <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" /> denote a time window of a fixed duration. The system collects all the reports received for each executable file and, at the end of <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" />, it calculates a value representing the weighted average computed on all the reports for each executable <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" />.
+Finally, the system adds such a value to <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_{e}(t) " class="latex" />.
+</p>
+
+
+
+<p>Considering <img src="https://s0.wp.com/latex.php?latex=+s_u%5Ee+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" s_u^e " class="latex" /> as the report relative to the executable file <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" />, sent by user <img src="https://s0.wp.com/latex.php?latex=+u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" u " class="latex" />, within the time window <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" />, <img src="https://s0.wp.com/latex.php?latex=+s_u%5Ee+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" s_u^e " class="latex" /> can assume values of <img src="https://s0.wp.com/latex.php?latex=+1+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" 1 " class="latex" /> or <img src="https://s0.wp.com/latex.php?latex=+-1+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" -1 " class="latex" /> , in cases of positive (can execute) or negative
+(do not execute) reporting, respectively. We remark that a user
+<img src="https://s0.wp.com/latex.php?latex=+u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" u " class="latex" /> can issue a single report <img src="https://s0.wp.com/latex.php?latex=+s_u%5Ee+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" s_u^e " class="latex" /> within a time slot for each
+executable file <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" />, so that if multiple reports are generated for the same file during a time window <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" /> occurring after the last update, the last report received overwrites the previous ones.
+</p>
+
+
+
+<p>Again, the weighted average of the reports, relative to an
+executable file <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" />, is calculated at the end of the window <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" /> according to Eq. :
+</p>
+
+
+
+<p style="text-align:center"><img src="https://s0.wp.com/latex.php?latex=+%5Cmu_e+%3D+%5Cfrac+%7B%5Csum_%7B%5Cforall+u%7D+s_e%5Eu+r_u%28t%29%7D+%7Bn_e%7D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \mu_e = \frac {\sum_{\forall u} s_e^u r_u(t)} {n_e} " class="latex" /></p>
+
+
+
+<p>where <img src="https://s0.wp.com/latex.php?latex=+n_e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" n_e " class="latex" /> is the number of reports collected for the executable file <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" /> , within the time window <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" /> .  Therefore, the final updated score <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_e " class="latex" /> at the end of the time window <img src="https://s0.wp.com/latex.php?latex=+T+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" T " class="latex" /> can be characterized by Eq. : </p>
+
+
+
+<p style="text-align:center"><img src="https://s0.wp.com/latex.php?latex=+%5Csigma_e%28t+%2B+T%29+%3D+%5Csigma_e%28t%29+%2B+%5Cmu_e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_e(t + T) = \sigma_e(t) + \mu_e " class="latex" /> .</p>
+
+
+
+<p>When the <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_e " class="latex" /> score exits from the interval <img src="https://s0.wp.com/latex.php?latex=+%5B-1%2C1%5D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" [-1,1] " class="latex" /> , the executable file <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" /> is classified as <em>reliable</em> if positive or <em>malicious</em> otherwise, and the reports previously sent by users for <img src="https://s0.wp.com/latex.php?latex=+e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" e " class="latex" /> will contribute to update their reputation. If the report <img src="https://s0.wp.com/latex.php?latex=+s_e%5Eu+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" s_e^u " class="latex" /> is consistent with the classification just carried out (the sign matches), the reputation of the user <img src="https://s0.wp.com/latex.php?latex=+u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" u " class="latex" /> grows, otherwise it decreases. More precisely, the value <img src="https://s0.wp.com/latex.php?latex=+r_u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" r_u " class="latex" /> will increase or decrease according to its value at time <img src="https://s0.wp.com/latex.php?latex=+t+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" t " class="latex" />, based on two coefficients of proportionality, namely, <img src="https://s0.wp.com/latex.php?latex=+a+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" a " class="latex" /> and <img src="https://s0.wp.com/latex.php?latex=+b+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" b " class="latex" />, both defined in the range <img src="https://s0.wp.com/latex.php?latex=+%5B0%2C1%5D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" [0,1] " class="latex" /> , as follows:
+</p>
+
+
+
+<p style="text-align:center"><img src="https://s0.wp.com/latex.php?latex=+r_u%28t+%2B+T%29+%3D+%5Cbegin%7Bcases%7D+%5Clceil+r_u%28t%29+%2B+%5CDelta_u%28t%29%5Crceil%5E1+%26+%5Cquad+%5Ctext%7Bif+%7D+%5Csigma_e%28t+%2B+T%29+%5Cin+%5B-1%2C1%5D+%5Ctext%7B+and+%7D+%5Csigma_e%28t%29+%5Cnotin+%5B-1%2C1%5D++%5C%5C+%5Clceil+%281+%2B+a%29r_u%28t%29+%5Crceil%5E1+%26+%5Cquad+%5Ctext%7Bif+%7D+%28%5Csigma_e%28t+%2B+T%29+%5Cnotin+%5B-1%2C1%5D+%5Ctext%7B+and+%7D+%5Csigma_e%28t%29+%5Cin+%5B-1%2C1%5D%29+%5Ctext%7B+and+%7D+%28%5Cnu%28s_e%5Eu%29+%3D+%5Cnu%28%5Csigma_e%28t+%2B+T%29%29%29+%5C%5C+%281+-+b%29r_u%28t%29+%26+%5Cquad+%5Ctext%7Bif+%7D+%28%5Csigma_e%28t+%2B+T%29+%5Cnotin+%5B-1%2C1%5D+%5Ctext%7B+and+%7D+%5Csigma_e%28t%29+%5Cin+%5B-1%2C1%5D%29+%5Ctext%7B+and+%7D+%28%5Cnu%28s_e%5Eu%29+%5Cne+%5Cnu%28%5Csigma_e%28t+%2B+T%29%29%29++%5Cend%7Bcases%7D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" r_u(t + T) = \begin{cases} \lceil r_u(t) + \Delta_u(t)\rceil^1 &amp; \quad \text{if } \sigma_e(t + T) \in [-1,1] \text{ and } \sigma_e(t) \notin [-1,1]  \\ \lceil (1 + a)r_u(t) \rceil^1 &amp; \quad \text{if } (\sigma_e(t + T) \notin [-1,1] \text{ and } \sigma_e(t) \in [-1,1]) \text{ and } (\nu(s_e^u) = \nu(\sigma_e(t + T))) \\ (1 - b)r_u(t) &amp; \quad \text{if } (\sigma_e(t + T) \notin [-1,1] \text{ and } \sigma_e(t) \in [-1,1]) \text{ and } (\nu(s_e^u) \ne \nu(\sigma_e(t + T)))  \end{cases} " class="latex" />  </p>
+
+
+
+<p>where:</p>
+
+
+
+<p style="text-align:center"><img src="https://s0.wp.com/latex.php?latex=%5Clceil+x%5Crceil%5Ey+%3D+%5Cbegin%7Bcases%7D+y+%26+%5Cquad+%5Ctext%7Bif+%7D+x+%3E+y+%5C%5C+x+%26+%5Cquad+%5Ctext%7Botherwise+%7D+%5Cend%7Bcases%7D++++%5Cnu%28x%29+%3D+%5Cbegin%7Bcases%7D+1+%26+%5Cquad+%5Ctext%7Bif+%7D+x+%3C+0+%5C%5C+0+%26+%5Cquad+%5Ctext%7Botherwise+%7D+%5Cend%7Bcases%7D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="\lceil x\rceil^y = \begin{cases} y &amp; \quad \text{if } x &gt; y \\ x &amp; \quad \text{otherwise } \end{cases}    \nu(x) = \begin{cases} 1 &amp; \quad \text{if } x &lt; 0 \\ 0 &amp; \quad \text{otherwise } \end{cases} " class="latex" />
+</p>
+
+
+
+<p style="text-align:center"><img src="https://s0.wp.com/latex.php?latex=+%5CDelta_u%28t%29+%3D+%5Cbegin%7Bcases%7D+0+%26+%5Cquad+%5Ctext%7Bif+%7D+r_u%28t+-+T%29+%5Ctext%7B+is+undefined+%7D+%5C%5C+r_u%28t%29+-+r_u%28t+-+T%29+%26+%5Cquad+%5Ctext%7B+otherwise+%7D+%5Cend%7Bcases%7D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \Delta_u(t) = \begin{cases} 0 &amp; \quad \text{if } r_u(t - T) \text{ is undefined } \\ r_u(t) - r_u(t - T) &amp; \quad \text{ otherwise } \end{cases} " class="latex" /></p>
+
+
+
+<p>Reasonable values for the two coefficients of proportionality could be <img src="https://s0.wp.com/latex.php?latex=+a+%3D+0.1+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" a = 0.1 " class="latex" /> and <img src="https://s0.wp.com/latex.php?latex=+b+%3D+0.5+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" b = 0.5 " class="latex" /> . In this way, a user who makes a series of correct reports will gradually see his reputation grow, until it reaches the maximum value allowed. Instead, a user who makes a wrong report, will see his reputation halved. Therefore, this choice allows to give a greater weight to incorrect reports, so as to discourage any attacks on the system. In fact, when <img src="https://s0.wp.com/latex.php?latex=+r_u+%3C+0.01+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" r_u &lt; 0.01 " class="latex" />, the user <img src="https://s0.wp.com/latex.php?latex=+u+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" u " class="latex" /> will be no longer able to make reports. </p>
+
+
+
+<p>Finally, if the value <img src="https://s0.wp.com/latex.php?latex=+%5Csigma_e+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \sigma_e " class="latex" /> returns within the interval <img src="https://s0.wp.com/latex.php?latex=+%5B-1%2C1%5D+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" [-1,1] " class="latex" /> ,
+each user to whom the reputation was increased (or decreased)
+will be subtracted (or added) a value equal to the increment
+(or to the decrease) previously received.
+</p>
+
+
+
+<h4>System Architecture</h4>
+
+
+
+<p>The architecture of the proposed solution involves the use of a distributed hash table and a kernel module for trapping execution, which is loaded by the operating system. The aim of the overall model is to classify a very large number of executable files and to manage the numerous reports coming from users, regarding the score of the executable files they are going to execute. However, it is important to remark that the number of such requests is potentially enormous, since the system could send a request for every file it tries to execute. For this reason, it is not appropriate to make reliability scores available by means of a centralized service architecture, since it could represent a performance bottleneck as well as a Single Point Of Failure (SPOF) and hence it could be easily vulnerable to DoS attacks. Inspired by these design criteria, our model is based on a hybrid architecture, composed of a Central Server for collecting users’ reports and a DHT based on Kademlia, for handling the interface to the scoring system in a fully distributed and replicated way. Kademlia employs a recursive algorithm for node lookups, routing queries and locating nodes within a topology driven by a XOR-based distance metric between points in the key space. Since such metric is fully symmetric, each participant node receives lookup queries from exactly the same distribution of nodes contained in their routing tables. As a consequence, lookup operations return with an extremely high probability a key-value pair stored in <img src="https://s0.wp.com/latex.php?latex=+%5Clceil+logn%5Crceil+%2B+c+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \lceil logn\rceil + c " class="latex" /> , where <img src="https://s0.wp.com/latex.php?latex=+n+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" n " class="latex" /> is the number of nodes and <img src="https://s0.wp.com/latex.php?latex=+c+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" c " class="latex" /> is a small constant characterizing the operation. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://i1.wp.com/github.com/gdecostanzo/MalwareKernelModule/raw/master/Documentation/Images/architecture.jpeg?w=720&amp;ssl=1" alt="" data-recalc-dims="1" /><figcaption> <br /> System architecture. </figcaption></figure></div>
+
+
+
+<p>In detail, the DHT stores the key-value pairs, consisting of the hash of an executable file and its associated score, together with a timestamp information. We remark that in our proposal, the nodes of the P2P overlay allow the writing only to the Central Server, which represents an <em>authoritative entity</em>, while anyone can read and request the score for an executable. The limitation in writing is guaranteed by the use of a digital signature scheme, used whenever a (hash, score) key-value pair is sent for storage on DHT. However, only signing this pair could make the system vulnerable to replay attacks. Indeed, any attacker could be able to capture a message sent on the P2P overlay, and then read the key- value pair and its digital signature. Again, the attacker could keep this message and re-send it later, thus succeeding in restoring the old score associated with an executable file. To overcome this problem, we use a time stamp indicating the expiration time for a specific message. More formally, let <img src="https://s0.wp.com/latex.php?latex=+%5CPi+%3D+%28Gen%2CSign%2CVerify%29+&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt=" \Pi = (Gen,Sign,Verify) " class="latex" /> be a generic digital signature scheme. Let <img src="https://s0.wp.com/latex.php?latex=TTP_%7Bpriv%7D&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="TTP_{priv}" class="latex" /> and <img src="https://s0.wp.com/latex.php?latex=TTP_%7Bpub%7D&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="TTP_{pub}" class="latex" /> be the keys needed to sign and verify a given message using <img src="https://s0.wp.com/latex.php?latex=%5CPi&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="\Pi" class="latex" /> , respectively. The <img src="https://s0.wp.com/latex.php?latex=TTP&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="TTP" class="latex" /> sends the following message (i.e., up) to the P2P overlay: </p>
+
+
+
+<p style="text-align:center"> <img src="https://s0.wp.com/latex.php?latex=up+%3D+%28hash%2C+score%2C+timestamp%2C+signature%29&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="up = (hash, score, timestamp, signature)" class="latex" /> </p>
+
+
+
+<p>where <em>signature</em> is computed by Eq. as follows ( ∥ denotes the concatenation symbol ):</p>
+
+
+
+<p style="text-align:center"><img src="https://s0.wp.com/latex.php?latex=signature+%3D+Sign_%7BTTP_%7Bpriv%7D%7D%28hash+%5Cparallel+score+%5Cparallel+timestamp%29&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="signature = Sign_{TTP_{priv}}(hash \parallel score \parallel timestamp)" class="latex" />   </p>
+
+
+
+<p>Within the <em>up</em> message, <em>hash</em> represents the <em>key</em>, while the triple <em>(score, timestamp, signature)</em> denotes the <em>value </em>to be stored in the DHT, respectively. The use of the stored signature allows an accessing entity to check the integrity and genuinity of any entry stored on the DHT, by using the public key <img src="https://s0.wp.com/latex.php?latex=TTP_%7Bpub%7D&amp;bg=ffffff&amp;fg=000&amp;s=0&amp;c=20201002" alt="TTP_{pub}" class="latex" /> , available through a recognized PKI infrastructure. Thus, the digital signature is calculated by adding also a validity end date (<em>timestamp</em>), which makes the generated message unusable after a certain period of time. We stress that the Central Server acts as a <em>Trusted Third Party (TTP)</em>, since it is the only entity which holds the private key used to sign the messages, as well as it is trusted by all other entities belonging to the system. Nowadays, many systems are based on <em>TTPs</em> to perform their operations in a fair and secure manner. For example, <em>TTPs</em> find scope of application in fair exchange protocols, authentication and certification systems, etc. Again, <em>TTPs</em> are used to incentivize honest behavior in some reputation-based systems and e-auction protocols. In detail, the Central Server collects all the reports received from the authenticated users and updates the scores of the executable files when the time window expires, by sending a signed message (<em>up</em>) containing the new value to the nodes of the DHT overlay. In the proposed system, the users are authenticated through a client certificate, issued to them by a CA at the end of a registration process, carried out to provide an appropriate verification of user identity. </p>
+
+
+
+<p>User reputations are kept on the Central Server, which updates them and establishes who is allowed to send reports. It is important to emphasize that the separation of roles between the Central Server and the Kademlia DHT overlay guarantees that, even in the event of a server failure (due to an attack or technical problems), users’ operating systems are always able to determine whether an executable file is <em>reliable </em>or <em>malicious</em>, since this information can be obtained by the DHT. Again, we remark that the use of a DHT ensures reliability and availability of the data at any time, since Kademlia is known to provide provable consistency and performance also within fault-prone environments . Finally, the software layer on the user system, used to check the executable file before its execution, is implemented through a kernel module. The main idea is to hijack the <em>execve </em>system call. Hence, before any file execution, the kernel module calculates the <em>SHA-256 </em>hash of such a file and verifies its score, by sending a request to the DHT. If the file is classified as <em>reliable</em>, then it is executed normally, otherwise, if it is classified as <em>malicious </em>or has not yet received reports, the kernel module will prevent execution until it is not been classified as reliable. However, this design has the following two drawbacks:<br /></p>
+
+
+
+<ul><li><strong>Latency</strong>: every <em>execve </em>system call needs to query the DHT before it can be executed. Obviously, this can cause system performance degradation also if Kademlia ensures response in a logarithmic time on the number of nodes, that have enough knowledge and flexibility to route queries through low-latency paths. In addition, Kademlia issues parallel asynchronous queries for mitigating the effects of timeout delays from failed nodes. </li><li><strong>Mandatory connection to the network</strong>: to determine if a file can be executed, an Internet connection is required to perform a verification on the Kademlia network. Thus, a disconnected system would be unusable. </li></ul>
+
+
+
+<p>To overcome such two limitations, we introduce a <em>local cache</em>, where the scores for each executable file are stored. In detail, this cache initially contains only the hashes of all the executable files belonging to the operating system and our system assigns to these files permanent execution permissions. In this way, a normal use of the system is still possible even without an Internet connection. In addition, for each executable file for which a check is performed on the DHT, the relative score is temporarily stored in the cache. By doing so, it is possible to avoid an access to the DHT for each further execution of a file. Thus, when a valid entry is present within the cache, such entry is used to drive the execution process. However, cache entries have a limited lifetime (that can be typically chosen as the length of the time slot <em>T</em> ) and all the cached data, when a connection is available, are automatically refreshed at their expiration through a new access to the DHT, so that updates to reliability scores are taken into account without affecting users’ execution performances. Notice that though this solution does not completely solve the latency problem, since there will still be a search in the cache for each execution, we can certainly say that the times are considerably reduced. Furthermore, a user with root privileges will be able to run new trusted files by adding them to the local cache (i.e. new compiled program files, or copied from trusted source).<br />The figure below shows a diagram which outlines how the kernel module works within the proposed system. </p>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img src="https://i1.wp.com/github.com/gdecostanzo/MalwareKernelModule/raw/master/Documentation/Images/architecture2.jpeg?w=720&amp;ssl=1" alt="" data-recalc-dims="1" /><figcaption> <br /> Kernel module operation scheme. </figcaption></figure></div>
+
+
+
+<h2>Architecture Design and Implementation </h2>
+
+
+
+<p>In this section we outline the design and implementation aspects of a proof of concept reflecting the architecture presented above. More precisely, in this section we focus on the design and implementation of both the kernel module for blocking the execution of <em>malicious </em>executable files and of the verification system accessible through the Kademlia overlay DHT. <br /><br />The <em>PoC</em> (Proof of Concept) code is publicly available on my <a href="https://github.com/gdecostanzo/MalwareKernelModule" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">GitHub</a>, and has been made on <em>Ubuntu 12.04.1</em> OS with kernel version <em>3.2.0-29-generic</em>. The choice is due to the ease with which it was possible to perform the hijacking of a system call, as explained below.</p>
+
+
+
+<h4><em>Execution Trapping Kernel Module </em></h4>
+
+
+
+<p>The implemented kernel module is characterized by the following three main functionalities: </p>
+
+
+
+<ul><li> Hijacking of the <em>execve </em>system call, through <em>hooking </em>of the system call table; </li><li> <em>SHA-256 </em>hashing of the executable file; </li><li> Checking the executable’s score, by connecting to the Kademlia network.</li></ul>
+
+
+
+<p> <em>1) <strong>Hijacking</strong>: </em>In order to hijack the <em>execve </em>system call, we use a fairly common technique, namely, the <em>hooking </em>of the system call table. In detail, the processes in the user space call a series of interrupts to the kernel space, which are stored in a predefined table during the Linux system initialization process. The pointers to different interrupt management functions are then stored. The idea is to appropriately manipulate these pointers within the table, in order to insert the desired actions. At the end of the added actions, the action of the original system call is then restored, to avoid crashes or anomalies in the operating system.  <br /><br />2) <em><strong>Hashing</strong>: </em>Once the system call has been hijacked, we can add the piece of code we want to execute. In our case, this code is inserted into the <em>new execve </em>function. Our goal is to check the reliability of a given file before it is executed. The system then calculates a <em>SHA-256 </em>hash of that file to verify its relative score. If the executable file is considered as <em>reliable</em>, then the original system call is executed, thus guaranteeing the normal behavior of the system. Otherwise, the system call will not be executed. <br /><br />3) <em><strong>Verification</strong>:</em> The final step is to verify the reliability of the executable file, by using the calculated hash. The verification is carried out by connecting to the Kademlia network or looking inside the local cache if it is not the first execution of the file. However, it is important to point out that for the development of a kernel module, not all the standard libraries normally used in user space C programming are available. To overcome this limitation, we use a <em>local socket</em>, which connects the kernel module with an application executed in user space. More precisely, we use an <em>AF UNIX </em>connection type, which allows the communication between a client and a server running on the same host, without the need to have an IP address. In detail, for the bind operation it is used a file descriptor, which points to a file within the local file system. Thus, the kernel module acts as a client, connecting to the application interfacing with the DHT and managing the local cache, executed in user space, which acts as a server (i.e., a daemon process) and waits for connections. When the kernel module makes a request to the server, it receives a Boolean value through which it determines whether or not it can execute the file. </p>
+
+
+
+<h4>Kademlia</h4>
+
+
+
+<p>For the realization of the DHT we started from an already existing implementation, written in Python and available on <a href="https://github.com/isaaczafuta/pydht" target="_blank" rel="noreferrer noopener" aria-label="GitHub (opens in a new tab)">GitHub</a>. In this section, we focus on the changes made to this existing code. The goal of our Kademlia implementation is to allow the write operation on the nodes only to a single authoritative entity. This is achieved through the use of a digital signature scheme. In detail, all nodes know the public key of the TTP and can verify the signature of an incoming store request message as well as the authenticity of a retrieved value. On the other hand, only the Central Server holding the private key is able to write on the DHT nodes. The changes on the Kademlia implementation were carried out within the <em>STORE </em>and <em>FIND </em>functions, where each Kademlia node, before storing the content, checks the signature and the timestamp, thus ensuring the authenticity of the message and the security with respect to <em>Replay attacks</em>. Analogously any lookup operation within the DHT before returning results performs a check of the aforementioned <em>signature</em> fields by using the public key of the TTP. </p>
+
+
+
+<h2>Experimentation and Results</h2>
+
+
+
+<p> In this section we provide implementation details about the proof of concept developed to assess the effectiveness and the performance of our proposal. Such assessment has clearly shown that the framework does not significantly impact neither the runtime performance of users’ executions nor the overall operating system activity. <br /><br />The <em>Proof of Concept</em> (PoC) code is publicly available on <a rel="noreferrer noopener" href="https://github.com/gdecostanzo/MalwareKernelModule" target="_blank">GitHub</a>, and has been made on <em>Ubuntu 12.04.1</em> OS with kernel version <em>3.2.0-29-generic</em>. The choice is due to the ease with which it was possible to perform the hijacking of a system call.</p>
+
+
+
+<h4><em>Execution test </em></h4>
+
+
+
+<p>As a sample untrusted executable, we created and compiled the “Hello World” <em>C </em>program shown below:</p>
+
+
+
+<pre class="wp-block-preformatted">#include <stdio.h>
+int main()
+{ printf ("Hello World! \n"); }</stdio.h></pre>
+
+
+
+<p>Since this program never executed, its hash is not present neither in the local cache nor on the DHT. Thus, such a program must not be executed by the system once the kernel module is loaded. As additional sample trusted executables we used the <em>/bin/ls</em> and <em>/bin/uname</em> standard Linux commands, whose reliability score has been pre-asserted on the DHT. </p>
+
+
+
+<h4>System performance</h4>
+
+
+
+<p>To evaluate the performance of our proposed framework, we analyzed the execution times of the aforementioned programs before and after loading the kernel module, as well as when the reliability information is already located in the local cache or it is yet in the DHT, in order to appreciate the latency introduced by both the caching mechanism and DHT access. The tests were carried out by means of a virtual machine running on an external hard drive at 5400 <em>RPM</em>, connected to the host system via <em>USB </em>3.0. The resources assigned to the virtual machine are 1 <em>GB RAM </em>and a single core of the <em>Intel Core i7 </em>processor at 2.2 <em>GHz</em>. The total elapsed time necessary to execute the sample applications with and without using the kernel module, and when information is already store in the cache or need to be accessed on the DHT, measured through the Linux <em>time </em>command is shown in the table below, where average values from 10 runs have been reported. </p>
+
+
+
+<img src="assets/posts/thesis/results.png" alt="" class="wp-image-1581" /><figcaption> <br /> Execution time of some programs (in msecs) with and without Kernel Module execution Trap and DHT access </figcaption>&lt;/figure&gt;</div>
+
+<p>We can appreciate that when the information is successfully cached, the average latency introduced by the execution of a program by the kernel module is negligible. Therefore, after the first execution of a file, which requires the connection to the Kademlia network and hence takes a longer time, due to both access to the P2P overlay and signature checking, all the following runs are impacted in a very limited way, respect to the enormous advantages introduced in terms of the overall system security. </p>
+
+<h2>Conclusion</h2>
+
+<p>We presented a novel lightweight solution to deal with unknown malware execution. Unlike most of the existing protection mechanisms, which are based on the concept of <em>blacklists</em>, this work relies on a <em>whitelist</em>-based approach, which is more conservative and can be summarized by the aphorism “prevention is better than cure”. We have realized the system architecture according to a hybrid logic and coupled it with a component that manages the reputation of users who contribute to the malware classification. The proposed system guarantees data persistence, that is, the availability of information even in the event of malfunctions or attacks. Furthermore, in this work we describe how to prevent different types of attacks that can subvert the reputation of the system. Finally, we show that the latency introduced by our system for the execution of a given file is acceptable, due to the use of a local cache. <br /><br />The presented system, surely brings limits of use on Desktop OS, due to the enormous number of runned applications, and for the new ones installed. However it represents an interesting and effective solution for server systems, or embedded systems for IoT.</p>
+
+    </div><div id="author">
+    <h3>About
+        Giovanni De Costanzo</h3>
+    <img src="assets/author-pic.png" alt="Photo of Giovanni De Costanzo"/>
+    <p>My name is Giovanni De Costanzo and I'm a Sr.Research Engineer at Malwarebytes. I'm a geek, passionate about all the tech world since early age.</p>
+</div><a class="u-url" href="/thesis" hidden></a>
+</article><hr/>
+
+<footer class="footer">
+    <div class="pure-menu pure-menu-horizontal">
+        <ul>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="/">
+                    <i class="fas fa-home"></i>
+                    <span class="md-display">Home</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.linkedin.com/in/giovanni-de-costanzo-54b6b083/">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="md-display">Linkedin</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://github.com/gdecostanzo">
+                    <i class="fab fa-github"></i>
+                    <span class="md-display">GitHub</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="mailto:mail@giovannidecostanzo.it">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="md-display">E-mail</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.facebook.com/giovanni.decostanzo">
+                    <i class="fab fa-facebook"></i>
+                    <span class="md-display">Facebook</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.instagram.com/g.decostanzo/">
+                    <i class="fab fa-instagram"></i>
+                    <span class="md-display">Instagram</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

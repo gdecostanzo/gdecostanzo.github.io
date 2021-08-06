@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Jekyll">
+    <link rel="license" href="LICENSE">
+
+    <meta name="application-name" content="Giovanni's Blog">
+    <meta name="theme-color" content="">
+    <link rel="archives" href="http://localhost:4000/archives/">
+
+    <meta name="robots" content="index,follow"> <!-- All Search Engines -->
+    <meta name="googlebot" content="index,follow"><!-- Google Specific    -->
+
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="/assets/code.css">
+    <script src="https://kit.fontawesome.com/e9dddf84a6.js" crossorigin="anonymous"></script><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>PiFace Digital 2 - Una libreria Python alternativa e più performante | Giovanni’s Blog</title>
+<meta name="generator" content="Jekyll v4.0.1" />
+<meta property="og:title" content="PiFace Digital 2 - Una libreria Python alternativa e più performante" />
+<meta name="author" content="Giovanni De Costanzo" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the personal website of Giovanni De Costanzo." />
+<meta property="og:description" content="This is the personal website of Giovanni De Costanzo." />
+<link rel="canonical" href="http://localhost:4000/PiFaceIO-PiFace-Library" />
+<meta property="og:url" content="http://localhost:4000/PiFaceIO-PiFace-Library" />
+<meta property="og:site_name" content="Giovanni’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-08-22T00:00:00+02:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="PiFace Digital 2 - Una libreria Python alternativa e più performante" />
+<meta name="twitter:site" content="@" />
+<meta name="twitter:creator" content="@Giovanni De Costanzo" />
+<script type="application/ld+json">
+{"dateModified":"2016-08-22T00:00:00+02:00","datePublished":"2016-08-22T00:00:00+02:00","url":"http://localhost:4000/PiFaceIO-PiFace-Library","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/PiFaceIO-PiFace-Library"},"author":{"@type":"Person","name":"Giovanni De Costanzo"},"description":"This is the personal website of Giovanni De Costanzo.","@type":"BlogPosting","headline":"PiFace Digital 2 - Una libreria Python alternativa e più performante","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Giovanni's Blog" /><link rel="alternate" type="application/rss+xml" href="http://localhost:4000/feed.xml">
+</head><body>
+
+    <div id="layout" class="pure-g"><aside class="sidebar pure-u-1 pure-u-md-1-4">
+    <div class="sidebar-info">
+        <a href="/">
+            <span hidden>Giovanni's Blog
+                Header Image</span>
+            <img class="brand-photo" src="http://localhost:4000/assets/profile_pic.jpg" alt="Photo of Giovanni De Costanzo"/>
+        </a>
+        <h1 class="brand-title">
+            <a href="/">Giovanni's Blog</a>
+        </h1>
+        <h2 class="brand-tagline">This is the personal website of Giovanni De Costanzo. </h2>
+
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="pure-button" href="http://localhost:4000/about">About Me</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside><div class="content pure-u-1 pure-u-md-3-4">
+            <div class="md-display">
+                <h1>
+                    <a class="jekyll-header" href="/">Welcome to Giovanni's Blog</a>
+                </h1><div class="menu">
+    <div class="about">
+        <a href="/about">
+            <i class="fas fa-signature"></i>
+            About
+        </a>
+    </div>
+    <div class="hashtags">
+        <a href="/tags">
+            <i class="fas fa-hashtag"></i>
+            Tags
+        </a>
+    </div>
+    <div class="categories">
+        <a href="/categories">
+            <i class="far fa-folder-open"></i>
+            Categories
+        </a>
+    </div>
+    <div class="archive">
+        <a href="/archive">
+            <i class="fas fa-archive"></i>
+            Archive
+        </a>
+    </div>
+</div><div id="search">
+    <label>
+        <span class="search-icon">🔎</span>
+        <input autocomplete="off" id="search-input" oninput="changeResultContainerDisp(this.value)" placeholder="Search all articles..." type="text"/>
+    </label>
+
+    <ul id="results-container" style="display: none"></ul>
+</div>
+<script src="/assets/simple-jekyll-search.js"></script>
+<script>
+    function changeResultContainerDisp(val) {
+        if (val) {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "block";
+            document.getElementById("search-input").addEventListener("blur", function () {
+                document.addEventListener("click", function (event) {
+                    var isClickInside = document.getElementById("results-container").contains(event.target);
+                    if (! isClickInside) {
+                        document
+                            .getElementById("results-container")
+                            .style
+                            .display = "none";
+                    }
+                })
+            })
+        } else {
+            document
+                .getElementById("results-container")
+                .style
+                .display = "none";
+        }
+    }
+    var sjs = SimpleJekyllSearch({
+        searchInput: document.getElementById("search-input"),
+        resultsContainer: document.getElementById("results-container"),
+        json: "/search.json",
+        searchResultTemplate: "<li class='search_res' style='list-style: none;'><a href='http://localhost:4000{url}' color: #555555;'><p><strong>></strong> {title}</p></a></li>",
+        noResultsText: "No results found. Try another search.",
+        fuzzy: false,
+        limit: 5
+    })
+</script></div>
+            <div>
+                <article class="post-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">PiFace Digital 2 - Una libreria Python alternativa e più performante</h2><p><time datetime="2016-08-22T00:00:00+02:00" itemprop="datePublished">
+        Aug 22, 2016
+    </time>&#8239;
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">By: Giovanni De Costanzo</span></span>&#8239;|&#8239;<a href="/tags/#InternetofThings">#InternetofThings</a> &#8239;<a href="/tags/#IoT">#IoT</a> &#8239;<a href="/tags/#piface">#piface</a> &#8239;<a href="/tags/#piface digital 2">#piface digital 2</a> &#8239;<a href="/tags/#pifaceio">#pifaceio</a> &#8239;<a href="/tags/#Programmazione">#Programmazione</a> &#8239;<a href="/tags/#Python">#Python</a> &#8239;<a href="/tags/#raspberry">#raspberry</a> &#8239;<a href="/tags/#raspberrypi">#raspberrypi</a> &#8239;</p></header>
+
+    <div articlebody" class="post-body itemprop=">
+        <figure>
+
+<img data-width="1291" data-height="479" src="assets/posts/pifacedigital2.jpg" />  
+</figure>
+<p>Un saluto a tutti i lettori.</p>
+
+<p>Alcune settimane fa ho avuto tra le mani un Raspberry Pi con modulo PiFace Digital 2, una scheda aggiuntiva collegata tramite interfaccia GPIO che consente al Raspberry di comunicare con relè, interruttori, input e output digitali. Il modulo PiFace Digital è facilmente programmabile in Python e consente ad esempio di collegare sensori, motori e luci che potranno essere controllati direttamente dal Raspberry. Dunque, se volete cimentarvi nel mondo IoT (Internet of Things), questo modulo è davvero interessante.</p>
+
+<p>La documentazione ufficiale, contenente anche dei brevissimi esempi di programmazione in Python, è disponibile qui.</p>
+
+<p>Gli sviluppatori del modulo PiFace Digital, hanno reso disponibile una libreria ufficiale in Python per poter mettere in comunicazione le nostre applicazioni con il modulo PiFace Digital. La libreria in questione si chiama pifacedigitalio, ed è sufficiente per gran parte degli scopi.</p>
+
+<p>In molte delle applicazioni tuttavia, potrebbe essere necessario ricorrere a delle tecniche di polling, ovvero dei controlli ciclici sulle porte di input, in attesa di un cambiamento del loro stato. Purtroppo, per questo tipo di applicazioni la libreria ufficiale si è rivelata inefficiente, a causa dei tempi di lettura delle porte non proprio ottimali. Questo potrebbe portare, come nel mio caso, a dei comportamenti dell’applicazione che non sempre sono quelli desiderati, in particolar modo nel caso di applicazioni multithread (che vedremo come realizzare in un prossimo articolo).</p>
+
+<p>Per ovviare a questo problema ho eseguito varie ricerche in rete prima di poter giungere alla soluzione, ovvero una diversa libreria, non ufficiale, creata appositamente per la realizzazione di polled applications. La libreria, realizzata dall’australiano Mark Blakeney, si chiama pifaceio, ed è disponibile su GitHub al seguente link: <a href="https://github.com/bulletmark/pifaceio">https://github.com/bulletmark/pifaceio</a></p>
+
+<p>La libreria pifaceio offre quattro metodi principali che sono:</p>
+
+<ol>
+  <li><b>read()</b>: Restituisce un byte che corrisponde allo stato di tutte le 8 porte di input.</li>
+  <li><b>write()</b>: Scrive un byte, passato opzionalmente come parametro, aggiornando lo stato delle 8 porte di output. Se non si passa nessun byte come parametro, la funzione aggiorna le porte di output con i valori impostati in precedenza della  chiamata alla funzione write_pin(), descritta in seguito.</li>
+  <li><b>read_pin(pin)</b>: Chiamato dopo il metodo read(), restituisce lo stato aggiornato della specifica porta di input passata come parametro.</li>
+  <li><b>write_pin(pin, state)</b>: Prende come parametri di input il numero di una porta di output e uno stato per essa. Per poter aggiornare effettivamente le porte è necessaria successivamente una chiamata al metodo write()</li>
+</ol>
+
+<p>Di seguito è riportato un banalissimo esempio di una applicazione che tramite polling, alla pressione del pulsante 0 sulla scheda PiFace (collegato in parallelo alla porta di input 0), attiva la porta di output corrispondente al numero di volte che il tasto è stato premuto, fino ad un massimo di 7. Quando una porta di output è attiva, sulla scheda PiFace vedrete accendersi il led corrispondente. Per comodità, ho preferito definire all’interno della mia applicazione le funzioni read_pin() e write_pin(), le quali ogni volta richiamano automaticamente anche i metodi read() e write() della libreria pifaceio, in modo da evitare di doverli richiamare manualmente ogni volta.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">#!/usr/bin/env python3
+</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span>
+<span class="kn">import</span> <span class="nn">pifaceio</span>
+
+<span class="n">pfio</span> <span class="o">=</span> <span class="n">pifaceio</span><span class="p">.</span><span class="n">PiFace</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">read_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
+   <span class="n">pfio</span><span class="p">.</span><span class="n">read</span><span class="p">()</span>
+   <span class="k">return</span> <span class="n">pfio</span><span class="p">.</span><span class="n">read_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">write_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">state</span><span class="p">):</span>
+   <span class="n">pfio</span><span class="p">.</span><span class="n">write_pin</span><span class="p">(</span><span class="n">pin</span><span class="p">,</span> <span class="n">state</span><span class="p">)</span>
+   <span class="n">pfio</span><span class="p">.</span><span class="n">write</span><span class="p">()</span>
+
+
+<span class="n">pin_counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">write_pin</span><span class="p">(</span><span class="n">pin_counter</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+   <span class="k">if</span> <span class="n">read_pin</span><span class="p">(</span><span class="mi">0</span><span class="p">):</span>
+      <span class="n">write_pin</span><span class="p">(</span><span class="n">pin_counter</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+      <span class="n">pin_counter</span> <span class="o">+=</span> <span class="mi">1</span>
+      <span class="k">if</span> <span class="n">pin_counter</span> <span class="o">&gt;</span> <span class="mi">7</span><span class="p">:</span>
+         <span class="k">break</span>
+      <span class="n">write_pin</span><span class="p">(</span><span class="n">pin_counter</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>In una prossima guida mostrerò come realizzare un’applicazione che effettua polling contemporaneamente su differenti input per effettuare diverse operazioni.</p>
+
+    </div><div id="author">
+    <h3>About
+        Giovanni De Costanzo</h3>
+    <img src="assets/author-pic.png" alt="Photo of Giovanni De Costanzo"/>
+    <p>My name is Giovanni De Costanzo and I'm a Sr.Research Engineer at Malwarebytes. I'm a geek, passionate about all the tech world since early age.</p>
+</div><a class="u-url" href="/PiFaceIO-PiFace-Library" hidden></a>
+</article><hr/>
+
+<footer class="footer">
+    <div class="pure-menu pure-menu-horizontal">
+        <ul>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="/">
+                    <i class="fas fa-home"></i>
+                    <span class="md-display">Home</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.linkedin.com/in/giovanni-de-costanzo-54b6b083/">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="md-display">Linkedin</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://github.com/gdecostanzo">
+                    <i class="fab fa-github"></i>
+                    <span class="md-display">GitHub</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="mailto:mail@giovannidecostanzo.it">
+                    <i class="fas fa-paper-plane"></i>
+                    <span class="md-display">E-mail</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.facebook.com/giovanni.decostanzo">
+                    <i class="fab fa-facebook"></i>
+                    <span class="md-display">Facebook</span>
+                </a>
+            </li>
+            <li class="pure-menu-item">
+                <a class="pure-menu-link" href="https://www.instagram.com/g.decostanzo/">
+                    <i class="fab fa-instagram"></i>
+                    <span class="md-display">Instagram</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</footer></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

