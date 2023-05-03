@@ -100,7 +100,7 @@ cd purelog
 5. Install gems from the `Gemfile`.
 
 ```
-bundle install
+bundle install && bundle add webrick
 ```
 
 6. Build the site and make it available on a local server.
