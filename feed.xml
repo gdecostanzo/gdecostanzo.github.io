@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://gdecostanzo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gdecostanzo.github.io/" rel="alternate" type="text/html" /><updated>2024-04-14T18:44:12+02:00</updated><id>https://gdecostanzo.github.io/feed.xml</id><title type="html">Giovanni’s Blog</title><subtitle>This is the personal website of Giovanni De Costanzo. </subtitle><author><name>Giovanni De Costanzo</name></author><entry><title type="html">A P2P Reputation-based System for Blocking Malware at Kernel-Level</title><link href="https://gdecostanzo.github.io/thesis" rel="alternate" type="text/html" title="A P2P Reputation-based System for Blocking Malware at Kernel-Level" /><published>2019-09-17T00:00:00+02:00</published><updated>2019-09-17T00:00:00+02:00</updated><id>https://gdecostanzo.github.io/thesis</id><content type="html" xml:base="https://gdecostanzo.github.io/thesis">&lt;div class=&quot;entry-content&quot; itemprop=&quot;articleBody&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://gdecostanzo.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://gdecostanzo.github.io/" rel="alternate" type="text/html" /><updated>2026-04-02T17:25:03+02:00</updated><id>https://gdecostanzo.github.io/feed.xml</id><title type="html">Giovanni’s Blog</title><subtitle>This is the personal website of Giovanni De Costanzo. </subtitle><author><name>Giovanni De Costanzo</name></author><entry><title type="html">Addio al Giardino Recintato: La mia migrazione da Apple a Samsung S26 Ultra</title><link href="https://gdecostanzo.github.io/Addio-al-giardino-recintato" rel="alternate" type="text/html" title="Addio al Giardino Recintato: La mia migrazione da Apple a Samsung S26 Ultra" /><published>2026-04-02T00:00:00+02:00</published><updated>2026-04-02T00:00:00+02:00</updated><id>https://gdecostanzo.github.io/Addio-al-giardino-recintato</id><content type="html" xml:base="https://gdecostanzo.github.io/Addio-al-giardino-recintato">&lt;div class=&quot;entry-content&quot; itemprop=&quot;articleBody&quot;&gt;
+				
+&lt;span id=&quot;more-1470&quot;&gt;&lt;/span&gt;
+
+&lt;img data-width=&quot;1291&quot; data-height=&quot;479&quot; src=&quot;assets/posts/thesis/cover.jpeg&quot; /&gt;  
+
+&lt;p&gt;Dopo oltre un decennio di fedeltà assoluta alla &quot;Mela&quot;, ho spento il mio iPhone 15 Plus e ho inserito la SIM in un Samsung Galaxy S26 Ultra. Non è stata una scelta impulsiva, ma il culmine di un processo di consapevolezza iniziato quando le prime crepe hanno incrinato quella perfezione che chiamiamo Ecosistema Apple.&lt;/p&gt;
+
+
+
+&lt;h2&gt;Le origini: un amore nato all&apos;Università&lt;/h2&gt;
+
+&lt;p&gt;Tutto è iniziato nel 2011 con un MacBook Pro 13&quot;, il mio compagno di studi. Da lì, l&apos;effetto domino è stato inarrestabile: l&apos;iPad mini, l&apos;iPod Touch e infine il mio primo iPhone, il 5S. Per anni ho vissuto quella magia dell&apos;integrazione perfetta. Apple Watch (2016), Apple TV (2019) – che ancora oggi fa il suo dovere egregiamente – e una sequenza di iPhone dal 6S al 12 Pro Max, fino al recente 15 Plus.
+Tuttavia, negli ultimi anni, qualcosa ha iniziato a scricchiolare. L&apos;innovazione è diventata pigra, i modelli quasi fotocopia e i prezzi... beh, i prezzi sono diventati follia. La goccia che ha fatto traboccare il vaso? 160€ richiesti per riparare il vetro del mio secondo Apple Watch. Lì ho capito che era il momento di guardarmi intorno.&lt;/p&gt;
+
+
+&lt;h2&gt;Diventare &quot;Platform Agnostic&quot;&lt;/h2&gt;
+
+
+&lt;p&gt;Il primo passo verso la libertà è stato il ritorno al PC Gaming desktop. Tornare a Windows dopo vent&apos;anni mi ha fatto capire che la convivenza è possibile. Ho iniziato a cercare soluzioni che non fossero platform-locked:
+&lt;/p&gt;
+
+
+
+&lt;ul&gt;&lt;li&gt;Addio iCloud Foto, benvenuto Immich e Synology
+&lt;/li&gt;&lt;li&gt; Addio Apple Notes e iCloud Drive, benvenuto Nextcloud&lt;/li&gt;&amp;lt;&lt;/ul&gt;
+
+
+
+&lt;p&gt;Una volta reso il mio workflow indipendente dall&apos;hardware, il salto allo smartphone era l&apos;ultimo tassello. Mentre Apple restava indietro sull&apos;IA con una Siri ferma a 15 anni fa e una &quot;Apple Intelligence&quot; che ha tagliato fuori il mio iPhone 15 Plus quasi subito, il mondo Android correva.&lt;/p&gt;
+
+&lt;h2&gt;L&apos;impatto con S26 Ultra: Luci e Ombre&lt;/h2&gt;
+&lt;p&gt;Passare a Samsung non è stato un percorso tutto rose e fiori. Sebbene Smart Switch sia superlativo, la migrazione di WhatsApp è stata traumatica, richiedendo diversi tentativi prima di andare a buon fine.&lt;/p&gt;
+
+&lt;h4&gt;Cosa mi manca di iOS:&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;b&gt;CarPlay vs Android Auto:&lt;/b&gt; Sulla mia nuova 3008, CarPlay gestiva meglio l&apos;integrazione delle mappe nel display driver. Android Auto sembra ancora un passo indietro su questo fronte&lt;/li&gt;&lt;li&gt;&lt;b&gt;L&apos;App Comandi (Shortcuts):&lt;/b&gt; Qui Apple vince ancora. La semplicità e la potenza di Comandi sono imbattibili. Su Samsung, né le Routine native né Macrodroid (molto potente ma decisamente spartano) mi hanno permesso di automatizzare facilmente la disattivazione della seconda SIM in fasce orarie prestabilite.&lt;/li&gt;&lt;li&gt;&lt;b&gt;App Terze:&lt;/b&gt; Sorprendentemente, alcune app per la gestione del NAS Synology sono sviluppate meglio su iOS che su Android.&lt;/li&gt;&lt;/ul&gt;
+
+&lt;h4&gt;Dove Samsung (e l&apos;IA) vince a mani basse:&lt;/h4&gt;
+
+&lt;ul&gt;&lt;li&gt;&lt;b&gt;Integrazione con Gemini:&lt;/b&gt; L&apos;editing delle foto, il filtro chiamate con risposte automatiche e la traduzione live sono feature &quot;Wow&quot; che rendono lo smartphone uno strumento realmente intelligente.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Privacy Display:&lt;/b&gt; Una funzione pazzesca gestita via software/hardware che oscura la visuale laterale senza dover applicare pellicole fisiche.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Personalizzazione:&lt;/b&gt; Il livello di controllo sul sistema è anni luce avanti a iOS.&lt;/li&gt;
+&lt;li&gt;&lt;b&gt;Messaggi Vocali su Android Auto:&lt;/b&gt; Finalmente posso ascoltare i vocali di WhatsApp e Telegram alla guida, una mancanza di CarPlay che mi faceva impazzire.&lt;/li&gt;&lt;/ul&gt;
+
+
+&lt;h2&gt;La gestione dei dati: un approccio da &quot;Smanettone&quot;&lt;/h2&gt;
+
+&lt;p&gt;Per integrare Nextcloud nel file manager di Samsung (My Files), ho dovuto faticare un po&apos;. A differenza di iOS, dove l&apos;integrazione è nativa, su Android ho optato per Autosync per mantenere una cartella locale sincronizzata bidirezionalmente. Questo mi permette di modificare un PDF e salvarlo senza dover fare download e upload manuali ogni volta.
+Per le AirPods, uso app di terze parti per monitorare la batteria, mentre per gli AirTag... beh, quelli sono rimasti nel cassetto, un piccolo prezzo da pagare per la libertà.&lt;/p&gt;
+
+&lt;h2&gt;Conclusioni&lt;/h2&gt;
+&lt;p&gt;Il passaggio a Samsung S26 Ultra mi ha confermato una cosa: non esiste il dispositivo perfetto, ma esiste il dispositivo giusto per il proprio momento tecnologico. Oggi, l&apos;innovazione abita altrove. Apple rimane una scelta di comfort, ma per chi vuole sperimentare con l&apos;IA, gestire i propri dati in autonomia e avere un assistente vocale che capisca davvero cosa stai dicendo, il salto è quasi obbligato.
+
+In attesa di vedere cosa farà Siri 2.0, mi godo il mio nuovo giocattolo. E voi? Siete ancora prigionieri del giardino recintato o state pensando di scavalcare il muro?&lt;/p&gt;
+&lt;/div&gt;</content><author><name>Giovanni De Costanzo</name></author><category term="Guides" /><category term="Android" /><category term="Apple" /><category term="iOS" /><category term="iPhone" /><category term="Samsung" /><category term="Galaxy S26 Ultra" /><category term="Cloud" /><category term="IA" /><category term="AI" /><category term="Siri" /><category term="Gemini" /><summary type="html"></summary></entry><entry><title type="html">A P2P Reputation-based System for Blocking Malware at Kernel-Level</title><link href="https://gdecostanzo.github.io/thesis" rel="alternate" type="text/html" title="A P2P Reputation-based System for Blocking Malware at Kernel-Level" /><published>2019-09-17T00:00:00+02:00</published><updated>2019-09-17T00:00:00+02:00</updated><id>https://gdecostanzo.github.io/thesis</id><content type="html" xml:base="https://gdecostanzo.github.io/thesis">&lt;div class=&quot;entry-content&quot; itemprop=&quot;articleBody&quot;&gt;
 				
 &lt;span id=&quot;more-1470&quot;&gt;&lt;/span&gt;
 
